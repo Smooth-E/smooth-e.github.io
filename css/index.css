@@ -39,8 +39,14 @@
 }
 
 #profile-name {
-    font-size: x-large;
-    font-weight: bolder;
     text-align: center;
     padding-bottom: var(--margin);
+}
+
+.contribution-graph {
+    width: 100%;
+}
+
+.category {
+    margin-top: calc(var(--margin) * 2);
 }

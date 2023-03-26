@@ -1,3 +1,6 @@
+---
+---
+
 <!DOCTYPE HTML>
 <html dir="ltr" lang="en">
 
@@ -7,70 +10,42 @@
         <title>Smooth E</title>
         <link rel="stylesheet" type="text/css" href="/css/style.css"/>
         <link rel="stylesheet" type="text/css" href="/css/index.css"/>
-        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Acme&display=swap"/>
+        <link rel="stylesheet" href="/css/contribution-chart.css"/>
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=dm+serif+display&display=swap"/>
     </head>
 
     <body>
 
-        <div class="horizontally-centered container content-width rounded-shadow" id="intro">
+        <div class="horizontally-centered container content-width rounded-shadow top-level-card" id="intro">
             <div id="profile-picture-frame">
                 <img id="profile-picture" src="assets/profile-pic.png"/>
             </div>
             <div id="profile-picture-shadow" class="rounded-shadow"></div>
-            <div id="profile-name">Smooth E</div>
-            <img id="commit-graph" src="https://ghchart.rshah.org/000/smooth-e" alt="Github Contributions Chart"/>
+            <h1 id="profile-name">Smooth E</h1>
+
+            <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
+            <div class="contribution-graph">
+                Loading the data just for you.
+            </div>
+            <script>
+                GitHubCalendar(".contribution-graph", "smooth-e", { responsive: true });
+            </script>
+
         </div>
 
-        <div class="container clamped horizontally-centered" id="products">
-            <div id="products-corousel-header">
-                Products by me
-            </div>
-            <div id="product-corousel">
-                <div class="card">
-                    <img class="icon" src="/assets/project-icon-sample.png"/>
-                    <div class="name">Sample name</div>
-                    <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam in arcu cursus euismod. Diam sit amet nisl suscipit adipiscing bibendum. Ut ornare lectus sit amet est. Faucibus scelerisque eleifend donec pretium. Enim neque volutpat ac tincidunt vitae. Augue ut lectus arcu bibendum at varius. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Tempor id eu nisl nunc mi ipsum. Neque gravida in fermentum et. Fermentum et sollicitudin ac orci phasellus egestas tellus. Libero volutpat sed cras ornare arcu dui. Libero enim sed faucibus turpis in eu mi bibendum neque. A pellentesque sit amet porttitor eget dolor morbi non arcu.</div>
-                </div>
-                <div class="card">
-                    <img class="icon" src="/assets/project-icon-sample.png"/>
-                    <div class="name">Sample name</div>
-                    <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam in arcu cursus euismod. Diam sit amet nisl suscipit adipiscing bibendum. Ut ornare lectus sit amet est. Faucibus scelerisque eleifend donec pretium. Enim neque volutpat ac tincidunt vitae. Augue ut lectus arcu bibendum at varius. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Tempor id eu nisl nunc mi ipsum. Neque gravida in fermentum et. Fermentum et sollicitudin ac orci phasellus egestas tellus. Libero volutpat sed cras ornare arcu dui. Libero enim sed faucibus turpis in eu mi bibendum neque. A pellentesque sit amet porttitor eget dolor morbi non arcu.</div>
-                </div>
-                <div class="card">
-                    <img class="icon" src="/assets/project-icon-sample.png"/>
-                    <div class="name">Sample name</div>
-                    <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam in arcu cursus euismod. Diam sit amet nisl suscipit adipiscing bibendum. Ut ornare lectus sit amet est. Faucibus scelerisque eleifend donec pretium. Enim neque volutpat ac tincidunt vitae. Augue ut lectus arcu bibendum at varius. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Tempor id eu nisl nunc mi ipsum. Neque gravida in fermentum et. Fermentum et sollicitudin ac orci phasellus egestas tellus. Libero volutpat sed cras ornare arcu dui. Libero enim sed faucibus turpis in eu mi bibendum neque. A pellentesque sit amet porttitor eget dolor morbi non arcu.</div>
-                </div>
-                <div class="card">
-                    <img class="icon" src="/assets/project-icon-sample.png"/>
-                    <div class="name">Sample name</div>
-                    <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam in arcu cursus euismod. Diam sit amet nisl suscipit adipiscing bibendum. Ut ornare lectus sit amet est. Faucibus scelerisque eleifend donec pretium. Enim neque volutpat ac tincidunt vitae. Augue ut lectus arcu bibendum at varius. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Tempor id eu nisl nunc mi ipsum. Neque gravida in fermentum et. Fermentum et sollicitudin ac orci phasellus egestas tellus. Libero volutpat sed cras ornare arcu dui. Libero enim sed faucibus turpis in eu mi bibendum neque. A pellentesque sit amet porttitor eget dolor morbi non arcu.</div>
-                </div>
-                <div class="card">
-                    <img class="icon" src="/assets/project-icon-sample.png"/>
-                    <div class="name">Sample name</div>
-                    <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam in arcu cursus euismod. Diam sit amet nisl suscipit adipiscing bibendum. Ut ornare lectus sit amet est. Faucibus scelerisque eleifend donec pretium. Enim neque volutpat ac tincidunt vitae. Augue ut lectus arcu bibendum at varius. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Tempor id eu nisl nunc mi ipsum. Neque gravida in fermentum et. Fermentum et sollicitudin ac orci phasellus egestas tellus. Libero volutpat sed cras ornare arcu dui. Libero enim sed faucibus turpis in eu mi bibendum neque. A pellentesque sit amet porttitor eget dolor morbi non arcu.</div>
-                </div>
-                <div class="card">
-                    <img class="icon" src="/assets/project-icon-sample.png"/>
-                    <div class="name">Sample name</div>
-                    <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam in arcu cursus euismod. Diam sit amet nisl suscipit adipiscing bibendum. Ut ornare lectus sit amet est. Faucibus scelerisque eleifend donec pretium. Enim neque volutpat ac tincidunt vitae. Augue ut lectus arcu bibendum at varius. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Tempor id eu nisl nunc mi ipsum. Neque gravida in fermentum et. Fermentum et sollicitudin ac orci phasellus egestas tellus. Libero volutpat sed cras ornare arcu dui. Libero enim sed faucibus turpis in eu mi bibendum neque. A pellentesque sit amet porttitor eget dolor morbi non arcu.</div>
-                </div>
-                <div class="card">
-                    <img class="icon" src="/assets/project-icon-sample.png"/>
-                    <div class="name">Sample name</div>
-                    <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam in arcu cursus euismod. Diam sit amet nisl suscipit adipiscing bibendum. Ut ornare lectus sit amet est. Faucibus scelerisque eleifend donec pretium. Enim neque volutpat ac tincidunt vitae. Augue ut lectus arcu bibendum at varius. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Tempor id eu nisl nunc mi ipsum. Neque gravida in fermentum et. Fermentum et sollicitudin ac orci phasellus egestas tellus. Libero volutpat sed cras ornare arcu dui. Libero enim sed faucibus turpis in eu mi bibendum neque. A pellentesque sit amet porttitor eget dolor morbi non arcu.</div>
-                </div>
-                <div class="card">
-                    <img class="icon" src="/assets/project-icon-sample.png"/>
-                    <div class="name">Sample name</div>
-                    <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam in arcu cursus euismod. Diam sit amet nisl suscipit adipiscing bibendum. Ut ornare lectus sit amet est. Faucibus scelerisque eleifend donec pretium. Enim neque volutpat ac tincidunt vitae. Augue ut lectus arcu bibendum at varius. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Tempor id eu nisl nunc mi ipsum. Neque gravida in fermentum et. Fermentum et sollicitudin ac orci phasellus egestas tellus. Libero volutpat sed cras ornare arcu dui. Libero enim sed faucibus turpis in eu mi bibendum neque. A pellentesque sit amet porttitor eget dolor morbi non arcu.</div>
-                </div>
-                <div class="card">
-                    <img class="icon" src="/assets/project-icon-sample.png"/>
-                    <div class="name">Sample name</div>
-                    <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam in arcu cursus euismod. Diam sit amet nisl suscipit adipiscing bibendum. Ut ornare lectus sit amet est. Faucibus scelerisque eleifend donec pretium. Enim neque volutpat ac tincidunt vitae. Augue ut lectus arcu bibendum at varius. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Tempor id eu nisl nunc mi ipsum. Neque gravida in fermentum et. Fermentum et sollicitudin ac orci phasellus egestas tellus. Libero volutpat sed cras ornare arcu dui. Libero enim sed faucibus turpis in eu mi bibendum neque. A pellentesque sit amet porttitor eget dolor morbi non arcu.</div>
-                </div>
+        <div class="horizontally-centered category top-level-card" id="products">
+            <h1>Products by me</h1>
+            <div class="product-carousel">
+
+                {% for product in site.products %}
+                    <div class="card rounded-shadow container">
+                        <div class="icon-frame">
+                            <img class="icon" src="{{ product.icon }}"/>
+                        </div>
+                        <div class="name">{{ product.name }}</div>
+                        <div class="description">{{ product.description | markdownify }}</div>
+                    </div>
+                {% endfor %}
 
             </div>
         </div>

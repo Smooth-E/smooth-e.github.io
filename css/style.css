@@ -1,14 +1,15 @@
 :root {
     --color-container: #FFF;
     --color-shadow: rgba(0, 0, 0, 0.7);
-    --corner-radius-big: 45px;
+    --corner-radius-big: 35px;
     --corner-radius-small: 20px;
     --margin: 15px;
+    --product-card-width: 250px;
 }
 
 body {
     padding: 0 0 0 0;
-    font-family: Acme, sans-serif, sans;
+    font-family: DM Serif Display, sans-serif, sans;
 }
 
 .container {
@@ -43,4 +44,42 @@ body {
 
 .content-width {
     width: fit-content;
+}
+
+.top-level-card {
+    width: calc(100% - var(--margin) * 4);
+    max-width: 800px;
+}
+
+h1 {
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.product-carousel {
+    display: flex;
+    flex-direction: row;
+}
+
+.product-carousel > .card {
+    width: var(--product-card-width);
+}
+
+.product-carousel > .card > .icon-frame {
+    width: calc(var(--product-card-width));
+    height: calc(var(--product-card-width));
+    overflow: hidden;
+    border-radius: var(--corner-radius-small);
+    margin-bottom: var(--margin);
+}
+
+.product-carousel > .card > .icon-frame > .icon {
+    width: 100%;
+    height: 100%;
+}
+
+.product-carousel > .card > .name {
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: var(--margin);
 }
