@@ -47,23 +47,23 @@
 
                         {% assign source = product.sources[0] | split: "|" %}
                         {% assign type = source.first | strip %}
-                        <div class="button {{ type }}">
-                            {% assign icon_name = type | slugify: "pretty" %}
-                            {% assign image_source = "/assets/icon-" | append: icon_name | append: ".png" %}
+                        {% assign slugged_name = type | downcase | slugify: "pretty" %}
+                        <a class="button {{ slugged_name }}" href="{{ source[1] }}">
+                            {% assign image_source = "/assets/icon-" | append: slugged_name | append: ".png" %}
                             <img class="source-icon" src="{{ image_source }}"/>
-                            {% if type == "github" %}
+                            {% if slugged_name == "github" %}
                                     GitHub
-                            {% elsif type == "itch" %}
+                            {% elsif slugged_name == "itch" %}
                                     itch.io
-                            {% elsif type == "google_play" %}
+                            {% elsif slugged_name == "google-play" %}
                                     Google Play
-                                {% elsif type == "documentation" %}
+                                {% elsif slugged_name == "documentation" %}
                                     Read
                             {% elsif type == "download" %}
-                                    Read
+                                    Download
                             {% endif %}
                             <img class="navigation-icon" src="/assets/navigation-right.png"/>
-                        </div>
+                        </a>
 
                     </div>
                 {% endfor %}

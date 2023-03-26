@@ -12,6 +12,7 @@
 body {
     padding: 0 0 0 0;
     font-family: DM Serif Display, sans-serif, sans;
+    overflow-x: hidden;
 }
 
 .container {
@@ -85,6 +86,9 @@ h1 {
 .product-carousel .card .name {
     font-size: large;
     font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .product-carousel .card .button {
@@ -98,6 +102,7 @@ h1 {
     display: flex;
     flex-direction: row;
     font-size: calc(var(--button-icon-size) / 1.2);
+    text-decoration: none;
 }
 
 .button > img {
@@ -113,4 +118,20 @@ h1 {
 
 .button.github {
     background-color: #24292F;
+}
+
+.button.itch {
+    background-color: #FA5C5C;
+}
+
+.button.google-play {
+    background-color: #059B70;
+}
+
+.button.download {
+    background-color: #00AAD5;
+}
+
+.button.documentation {
+    background-color: #3F627F;
 }

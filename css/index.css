@@ -8,7 +8,7 @@
     flex-direction: column;
     align-content: center;
     padding-top: calc(var(--profile-picture-size) / 2 + var(--margin));
-    margin-top: calc(var(--profile-picture-size) / 2 + var(--margin));
+    margin-top: calc(var(--profile-picture-size) / 2 + var(--margin) * 2);
 }
 
 #profile-picture-frame {
