@@ -1,0 +1,26 @@
+:root {
+    --color-background: #f7eaff;
+    --color-foreground1: #381f3d;
+    --color-container: white;
+}
+
+body {
+    background-color: var(--color-background);
+    font-family: Acme, sans-serif, sans;
+}
+
+.container {
+    margin: 20px;
+    border-radius: 20px;
+    background-color: var(--color-container);
+    backdrop-filter: blur(10px);
+}
+
+.clamped {
+    max-width: 1000px;
+}
+
+.horizontally-centered {
+    margin-left: auto;
+    margin-right: auto;
+}
