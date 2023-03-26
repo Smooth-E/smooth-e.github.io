@@ -1,21 +1,35 @@
 :root {
-    --color-darker: #2C3333;
-    --color-dark: #2E4F4F;
-    --color-light: #0E8388;
-    --color-lighter: #CBE4DE;
+    --color-container: #FFF;
+    --color-shadow: rgba(0, 0, 0, 0.7);
     --corner-radius-big: 45px;
     --corner-radius-small: 20px;
+    --margin: 15px;
 }
 
 body {
-    background-color: var(--color-background);
+    padding: 0 0 0 0;
     font-family: Acme, sans-serif, sans;
 }
 
 .container {
-    margin: 20px;
+    position: relative;
+    margin: var(--margin);
     border-radius: var(--corner-radius-big);
-    background-color: #000;
+    padding: var(--margin);
+    background-color: var(--color-container);
+}
+
+.rounded-shadow:after {
+    content: "";
+    background-color: var(--color-shadow);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    left: 0px;
+    top: 0px;
+    border-radius: var(--corner-radius-big);
+    filter: blur(10px);
 }
 
 .clamped {
@@ -25,4 +39,8 @@ body {
 .horizontally-centered {
     margin-left: auto;
     margin-right: auto;
+}
+
+.content-width {
+    width: fit-content;
 }
