@@ -1,4 +1,5 @@
 ---
+latest_release: 2023-03-18
 icon: /assets/project-icon-sample.png
 name: Wireless Debugging Switch Widget
 description: An app that allows you to switch Android's Wireless Debugging feature on and off quickly. It provides several widgets and a quick settings tile to do this.

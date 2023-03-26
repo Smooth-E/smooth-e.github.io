@@ -37,13 +37,34 @@
             <h1>Products by me</h1>
             <div class="product-carousel">
 
-                {% for product in site.products %}
+                {% for product in site.products reversed %}
                     <div class="card rounded-shadow container">
                         <div class="icon-frame">
                             <img class="icon" src="{{ product.icon }}"/>
                         </div>
                         <div class="name">{{ product.name }}</div>
                         <div class="description">{{ product.description | markdownify }}</div>
+
+                        {% assign source = product.sources[0] | split: "|" %}
+                        {% assign type = source.first | strip %}
+                        <div class="button {{ type }}">
+                            {% assign icon_name = type | slugify: "pretty" %}
+                            {% assign image_source = "/assets/icon-" | append: icon_name | append: ".png" %}
+                            <img class="source-icon" src="{{ image_source }}"/>
+                            {% if type == "github" %}
+                                    GitHub
+                            {% elsif type == "itch" %}
+                                    itch.io
+                            {% elsif type == "google_play" %}
+                                    Google Play
+                                {% elsif type == "documentation" %}
+                                    Read
+                            {% elsif type == "download" %}
+                                    Read
+                            {% endif %}
+                            <img class="navigation-icon" src="/assets/navigation-right.png"/>
+                        </div>
+
                     </div>
                 {% endfor %}
 

@@ -55,4 +55,6 @@
 #   - vendor/ruby/
 
 collections:
-  - products
+  products:
+    sort_by: latest_release
+    
