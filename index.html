@@ -8,10 +8,13 @@
         <meta charset="utf-8"/>
         <link rel="icon" href="/assets/profile-pic.png"/>
         <title>Smooth E</title>
+
         <link rel="stylesheet" type="text/css" href="/css/style.css"/>
         <link rel="stylesheet" type="text/css" href="/css/index.css"/>
         <link rel="stylesheet" href="/css/contribution-chart.css"/>
-        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=dm+serif+display&display=swap"/>
+        <link rel="stylesheet" type="text/html" href="https://fonts.googleapis.com/css?family=dm+serif+display&display=swap"/>
+
+        <script type="text/javascript" src="/assets/js/products-carousel.js" defer></script>
     </head>
 
     <body>
@@ -33,9 +36,20 @@
 
         </div>
 
-        <div class="horizontally-centered category top-level-card" id="products">
-            <h1>Products by me</h1>
-            <div class="product-carousel">
+        <div class="products-list">
+            <div class="header horizontally-centered top-level-card">
+                <button id="arrow-left" class="arrow rounded-shadow">
+                    <img src="/assets/navigation-left.png"/>
+                </button>
+                <button id="arrow-right" class="arrow rounded-shadow">
+                    <img src="/assets/navigation-right.png"/>
+                </button>
+                <h1>Products</h1>
+                <div class="badge">
+                    {{ site.products.size }} in total
+                </div>
+            </div>
+            <div class="product-carousel horizontally-centered top-level-card">
 
                 {% for product in site.products reversed %}
                     <div class="card rounded-shadow container">
