@@ -1,15 +1,25 @@
+:root {
+    --profile-picture-size: 120px;
+}
+
 #intro {
+    position: relative;
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    flex-direction: column;
+    align-content: center;
     padding: 10px;
+    background-color: var(--color-darker);
 }
 
 #profile-picture-frame {
     border-radius: 50%;
-    width: 120px;
-    height: 120px;
+    width: var(--profile-picture-size);
+    height: var(--profile-picture-size);
     overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+    margin-bottom: 10px;
 }
 
 #profile-picture {
@@ -18,6 +28,7 @@
 }
 
 #card-name {
+    align-items: center;
     text-align: center;
 }
 
@@ -26,7 +37,18 @@
 }
 
 #card-commits {
+    margin-top: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
+    filter: blur(2px);
+}
+
+#commit-graph {
+    z-index: 1;
+}
+
+#commit-graph-shadow {
+    position: absolute;
+    filter: blur(3px);
 }

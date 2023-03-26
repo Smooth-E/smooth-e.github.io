@@ -1,7 +1,10 @@
 :root {
-    --color-background: #f7eaff;
-    --color-foreground1: #381f3d;
-    --color-container: white;
+    --color-darker: #2C3333;
+    --color-dark: #2E4F4F;
+    --color-light: #0E8388;
+    --color-lighter: #CBE4DE;
+    --corner-radius-big: 45px;
+    --corner-radius-small: 20px;
 }
 
 body {
@@ -11,9 +14,8 @@ body {
 
 .container {
     margin: 20px;
-    border-radius: 20px;
-    background-color: var(--color-container);
-    backdrop-filter: blur(10px);
+    border-radius: var(--corner-radius-big);
+    background-color: #000;
 }
 
 .clamped {
