@@ -46,28 +46,66 @@
     padding-bottom: var(--margin);
 }
 
-.contribution-graph {
-    width: 100%;
-}
-
 .category {
     margin-top: calc(var(--margin) * 2);
 }
 
+.contribution-graph {
+    width: 100%;
+
+    .js-calendar-graph-svg > g {
+        transform: translate(0, 0) !important;
+
+        .ContributionCalendar-label {
+            display: none;
+        }
+
+    }
+
+}
+
 @keyframes calendar-day {
-    to { filter: blur(0px); }
+    to {
+        filter: blur(0px) opacity(100%);
+        transform: translateY(0px);
+    }
 }
 
 @for $week from 1 through 100 {
 
     @for $day from 1 through 7 {
 
-        .contribution-graph .js-calendar-graph .js-calendar-graph-svg > g > g:nth-child(#{$week}) .ContributionCalendar-day:nth-child(#{$day}) {
-            filter: blur(3px);
+        .contribution-graph g > g:nth-child(#{$week}) .ContributionCalendar-day:nth-child(#{$day}) {
+            filter: blur(3px) opacity(0%);
+            transform: translateY(-15px);
+            position: relative;
             animation-name: calendar-day;
             animation-duration: 0.5s;
-            animation-delay: #{($week + $day) * 0.025}s;
+            animation-delay: #{($week + $day) * 0.01}s;
             animation-fill-mode: forwards;
+        }
+
+    }
+
+}
+
+@media screen and (max-width: 700px) {
+
+    .contribution-graph {
+        display: flex;
+        flex-direction: column;
+        width: 105%;
+        transform: translateX(-2.5%);
+
+        .contrib-column {
+            width: 100%;
+            padding-right: 0;
+            padding-left: 0;
+            padding-bottom: 0;
+        }
+
+        .contrib-column-first {
+            padding-top: 0;
         }
 
     }
