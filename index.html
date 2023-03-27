@@ -16,7 +16,10 @@
         <link rel="stylesheet" type="text/css" href="/css/style.css"/>
         <link rel="stylesheet" type="text/css" href="/css/index.css"/>
         <link rel="stylesheet" href="/css/contribution-chart.css"/>
-        <link rel="stylesheet" type="text/html" href="https://fonts.googleapis.com/css?family=dm+serif+display&display=swap"/>
+        <link rel="stylesheet"
+              type="text/html"
+              href="https://fonts.googleapis.com/css?family=dm+serif+display&display=swap"
+        />
 
         <script type="text/javascript" src="/assets/js/products-carousel.js" defer></script>
     </head>
@@ -53,8 +56,11 @@
                     {{ site.products.size }}<span> in total</span>
                 </div>
             </div>
-            <div id="carousel-pane" class="horizontally-centered top-level-card" data-current-entry="0" data-entry-count="{{ site.products.size }}">
-
+            <div id="carousel-pane"
+                 class="horizontally-centered top-level-card"
+                 data-current-entry="0"
+                 data-entry-count="{{ site.products.size }}"
+            >
                 {% assign sorted_products = site.products |  sort: "latest_release" %}
                 {% for product in sorted_products reversed %}
                     <div class="card rounded-shadow hover-reactive container">
@@ -63,27 +69,18 @@
                         </div>
                         <div class="name">{{ product.name }}</div>
                         <div class="description">{{ product.description | markdownify }}</div>
-
-                        {% assign source = product.sources[0] | split: "|" %}
-                        {% assign type = source.first | strip %}
-                        {% assign slugged_name = type | downcase | slugify: "pretty" %}
-                        <a class="button {{ slugged_name }}" href="{{ source[1] }}">
-                            {% assign image_source = "/assets/icon-" | append: slugged_name | append: ".png" %}
-                            <img class="source-icon" src="{{ image_source }}"/>
-                            {% if slugged_name == "github" %}
-                                    GitHub
-                            {% elsif slugged_name == "itch" %}
-                                    itch.io
-                            {% elsif slugged_name == "google-play" %}
-                                    Google Play
-                                {% elsif slugged_name == "documentation" %}
-                                    Read
-                            {% elsif type == "download" %}
-                                    Download
-                            {% endif %}
-                            <img class="navigation-icon" src="/assets/navigation-right.png"/>
-                        </a>
-
+                        <div id="icon-container">
+                            {% for source in product.sources %}
+                                {% assign splitted_source = source |  split: " | " %}
+                                {% assign type = splitted_source.first | strip %}
+                                {% assign slugged_name = type | downcase | slugify: "pretty" %}
+                                <div class="source-badge" data-type="{{ slugged_name }}">
+                                    <img src="{{ "/assets/icon-" |  append: slugged_name |  append: ".png" }}"
+                                         alt="{{ slugged_name }}"
+                                    />
+                                </div>
+                            {% endfor %}
+                        </div>
                     </div>
                 {% endfor %}
 

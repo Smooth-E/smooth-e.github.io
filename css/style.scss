@@ -1,13 +1,22 @@
+---
+---
+
 :root {
     --color-container: #FFF;
     --color-shadow: rgba(0, 0, 0, 0.7);
     --color-on-secondary: #FFF;
     --color-badge: #949494;
+
     --corner-radius-big: 35px;
     --corner-radius-small: 20px;
+
     --margin: 15px;
+
     --product-card-width: 250px;
     --button-icon-size: 25px;
+
+    --source-badge-padding: 5px;
+    --source-badge-margin: 10px;
 }
 
 body {
@@ -107,7 +116,7 @@ h1 {
 .carousel .arrow > img {
     width: 100%;
     height: 100%;
-    filter: invert();
+    filter: invert(#000, 100%);
     align-self: center;
 }
 
@@ -170,6 +179,16 @@ h1 {
     margin-top: auto;
 }
 
+#carousel-pane .card #icon-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: auto;
+}
+
+#carousel-pane .card #icon-container .source-badge {
+    margin-right: var(--source-badge-margin);
+}
+
 .button {
     border-radius: var(--corner-radius-small);
     color: var(--color-on-secondary);
@@ -191,11 +210,25 @@ h1 {
     margin-inline-end: 0;
 }
 
-.button.github {
+.source-badge {
+    width: var(--button-icon-size);
+    height: var(--button-icon-size);
+    border-radius: 50%;
+    padding: var(--source-badge-padding);
+}
+
+.source-badge img {
+    width: 100%;
+    height: 100%;
+}
+
+.button.github,
+.source-badge[data-type="github"] {
     background-color: #24292F;
 }
 
-.button.itch {
+.button.itch,
+.source-badge[data-type="itch"] {
     background-color: #FA5C5C;
 }
 
@@ -203,10 +236,12 @@ h1 {
     background-color: #059B70;
 }
 
-.button.download {
+.button.download,
+.source-badge[data-type="download"] {
     background-color: #00AAD5;
 }
 
-.button.documentation {
+.button.documentation,
+.source-badge[data-type="documentation"] {
     background-color: #3F627F;
 }
