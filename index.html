@@ -42,22 +42,22 @@
 
         <div class="carousel">
             <div class="header horizontally-centered top-level-card">
-                <button id="arrow-left" class="arrow rounded-shadow">
+                <button id="arrow-left" class="arrow rounded-shadow hover-reactive">
                     <img src="/assets/navigation-left.png" alt="Arrow Left"/>
                 </button>
-                <button id="arrow-right" class="arrow rounded-shadow">
+                <button id="arrow-right" class="arrow rounded-shadow hover-reactive">
                     <img src="/assets/navigation-right.png" alt="Arrow Right"/>
                 </button>
                 <h1>Products</h1>
                 <div class="badge">
-                    {{ site.products.size }}<span>in total</span>
+                    {{ site.products.size }}<span> in total</span>
                 </div>
             </div>
             <div id="carousel-pane" class="horizontally-centered top-level-card" data-current-entry="0" data-entry-count="{{ site.products.size }}">
 
                 {% assign sorted_products = site.products |  sort: "latest_release" %}
                 {% for product in sorted_products reversed %}
-                    <div class="card rounded-shadow container">
+                    <div class="card rounded-shadow hover-reactive container">
                         <div class="icon-frame">
                             <img class="icon" src="{{ product.icon }}" alt="Product Icon"/>
                         </div>

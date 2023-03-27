@@ -11,7 +11,7 @@
 }
 
 body {
-    padding: 0 0 0 0;
+    padding: 0;
     font-family: DM Serif Display, sans-serif, sans;
     overflow-x: hidden;
 }
@@ -35,6 +35,19 @@ body {
     top: 0;
     border-radius: var(--corner-radius-big);
     filter: blur(10px);
+    transition: filter .1s ease;
+}
+
+@media (any-hover: hover) {
+
+    .rounded-shadow.hover-reactive:hover:after {
+        filter: blur(7px);
+    }
+
+}
+
+.rounded-shadow.hover-reactive:active:after {
+    filter: blur(4px);
 }
 
 .clamped {
