@@ -53,5 +53,4 @@ exclude:
 
 collections:
   products:
-    sort_by: latest_release
     output: true

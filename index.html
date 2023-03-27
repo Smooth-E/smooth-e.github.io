@@ -9,6 +9,10 @@
         <link rel="icon" href="/assets/profile-pic.png"/>
         <title>Smooth E</title>
 
+        <meta name="HandheldFriendly" content="true" />
+        <meta name="MobileOptimized" content="320" />
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=no" />
+
         <link rel="stylesheet" type="text/css" href="/css/style.css"/>
         <link rel="stylesheet" type="text/css" href="/css/index.css"/>
         <link rel="stylesheet" href="/css/contribution-chart.css"/>
@@ -46,12 +50,13 @@
                 </button>
                 <h1>Products</h1>
                 <div class="badge">
-                    {{ site.products.size }} in total
+                    {{ site.products.size }}<span>in total</span>
                 </div>
             </div>
             <div id="carousel-pane" class="horizontally-centered top-level-card" data-current-entry="0" data-entry-count="{{ site.products.size }}">
 
-                {% for product in site.products reversed %}
+                {% assign sorted_products = site.products |  sort: "latest_release" %}
+                {% for product in sorted_products reversed %}
                     <div class="card rounded-shadow container">
                         <div class="icon-frame">
                             <img class="icon" src="{{ product.icon }}" alt="Product Icon"/>
