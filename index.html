@@ -36,25 +36,25 @@
 
         </div>
 
-        <div class="products-list">
+        <div class="carousel">
             <div class="header horizontally-centered top-level-card">
                 <button id="arrow-left" class="arrow rounded-shadow">
-                    <img src="/assets/navigation-left.png"/>
+                    <img src="/assets/navigation-left.png" alt="Arrow Left"/>
                 </button>
                 <button id="arrow-right" class="arrow rounded-shadow">
-                    <img src="/assets/navigation-right.png"/>
+                    <img src="/assets/navigation-right.png" alt="Arrow Right"/>
                 </button>
                 <h1>Products</h1>
                 <div class="badge">
                     {{ site.products.size }} in total
                 </div>
             </div>
-            <div class="product-carousel horizontally-centered top-level-card">
+            <div id="carousel-pane" class="horizontally-centered top-level-card" data-current-entry="0" data-entry-count="{{ site.products.size }}">
 
                 {% for product in site.products reversed %}
                     <div class="card rounded-shadow container">
                         <div class="icon-frame">
-                            <img class="icon" src="{{ product.icon }}"/>
+                            <img class="icon" src="{{ product.icon }}" alt="Product Icon"/>
                         </div>
                         <div class="name">{{ product.name }}</div>
                         <div class="description">{{ product.description | markdownify }}</div>
