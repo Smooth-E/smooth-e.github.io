@@ -1,3 +1,6 @@
+---
+---
+
 :root {
     --profile-picture-size: 120px;
 }
@@ -49,4 +52,24 @@
 
 .category {
     margin-top: calc(var(--margin) * 2);
+}
+
+@keyframes calendar-day {
+    to { filter: blur(0px); }
+}
+
+@for $week from 1 through 100 {
+
+    @for $day from 1 through 7 {
+
+        .contribution-graph .js-calendar-graph .js-calendar-graph-svg > g > g:nth-child(#{$week}) .ContributionCalendar-day:nth-child(#{$day}) {
+            filter: blur(3px);
+            animation-name: calendar-day;
+            animation-duration: 0.5s;
+            animation-delay: #{($week + $day) * 0.025}s;
+            animation-fill-mode: forwards;
+        }
+
+    }
+
 }
