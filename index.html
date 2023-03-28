@@ -26,7 +26,7 @@
 
     <body>
 
-        <div class="horizontally-centered container content-width rounded-shadow top-level-card" id="intro">
+        <div class="horizontally-centered container rounded-shadow content-width top-level-card" id="intro">
             <div id="profile-picture-frame">
                 <img id="profile-picture" src="assets/profile-pic.png"/>
             </div>
@@ -66,23 +66,25 @@
 
                 {% assign sorted_products = site.products |  sort: "latest_release" %}
                 {% for product in sorted_products reversed %}
-                    <div class="card rounded-shadow hover-reactive container">
-                        <div class="icon-frame">
-                            <img class="icon" src="{{ product.icon }}" alt="Product Icon"/>
-                        </div>
-                        <div class="name">{{ product.name }}</div>
-                        <div class="description">{{ product.description | markdownify }}</div>
-                        <div id="icon-container">
-                            {% for source in product.sources %}
-                                {% assign splitted_source = source |  split: " | " %}
-                                {% assign type = splitted_source.first | strip %}
-                                {% assign slugged_name = type | downcase | slugify: "pretty" %}
-                                <div class="source-badge" data-type="{{ slugged_name }}">
-                                    <img src="{{ "/assets/icon-" |  append: slugged_name |  append: ".png" }}"
-                                         alt="{{ slugged_name }}"
-                                    />
-                                </div>
-                            {% endfor %}
+                    <div class="container-wrapper">
+                        <div class="card rounded-shadow hover-reactive container">
+                            <div class="icon-frame">
+                                <img class="icon" src="{{ product.icon }}" alt="Product Icon"/>
+                            </div>
+                            <div class="name">{{ product.name }}</div>
+                            <div class="description">{{ product.description | markdownify }}</div>
+                            <div id="icon-container">
+                                {% for source in product.sources %}
+                                    {% assign splitted_source = source |  split: " | " %}
+                                    {% assign type = splitted_source.first | strip %}
+                                    {% assign slugged_name = type | downcase | slugify: "pretty" %}
+                                    <div class="source-badge" data-type="{{ slugged_name }}">
+                                        <img src="{{ "/assets/icon-" |  append: slugged_name |  append: ".png" }}"
+                                             alt="{{ slugged_name }}"
+                                        />
+                                    </div>
+                                {% endfor %}
+                            </div>
                         </div>
                     </div>
                 {% endfor %}
