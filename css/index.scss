@@ -52,12 +52,18 @@
 
 .contribution-graph {
     width: 100%;
+    overflow: visible;
 
-    .js-calendar-graph-svg > g {
-        transform: translate(0, 0) !important;
+    .js-calendar-graph-svg {
+        overflow: visible;
 
-        .ContributionCalendar-label {
-            display: none;
+        & > g {
+            transform: translate(0, 0) !important;
+
+            .ContributionCalendar-label {
+                display: none;
+            }
+
         }
 
     }
