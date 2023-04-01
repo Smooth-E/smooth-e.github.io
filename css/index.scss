@@ -106,7 +106,7 @@
     @for $day from 1 through 7 {
 
         .contribution-graph g > g:nth-child(#{$week}) .ContributionCalendar-day:nth-child(#{$day}) {
-            filter: blur(3px);
+            filter: blur(5px);
             opacity: 0;
             transform: translateY(-15px);
             position: relative;

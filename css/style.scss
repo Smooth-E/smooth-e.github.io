@@ -19,11 +19,16 @@
     --source-badge-margin: 10px;
 }
 
-/* Animations used everywhere */
+/* Animations */
 
 @keyframes appear-from-blur {
     from { filter: blur(10px) }
     to { filter: blur(0px) }
+}
+
+// Used from product-carousel.js
+@keyframes card-appearance {
+    to { transform: translate(0, 0); }
 }
 
 @keyframes transparent-fly-in {
@@ -40,7 +45,7 @@
 
 }
 
-/* End declaring animations */
+/* End animations */
 
 body {
     padding: 0;
@@ -159,10 +164,6 @@ h1 {
         left: calc(var(--margin) * -1);
         transition: transform .3s ease;
         transform: translateX(0);
-
-        @keyframes card-appearance {
-            to { transform: translate(0, 0); z-index: 1; }
-        }
 
         .card {
             position: relative;

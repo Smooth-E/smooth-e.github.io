@@ -18,7 +18,7 @@ for (let i = 1; i <= elements.length; i++) {
                 position: relative;
                 animation-name: card-appearance;
                 animation-duration: 1s;
-                transform: translate(${500 * cardIndex}px, ${50 * cardIndex}px);
+                transform: translate(${500 * cardIndex}px, ${35 * cardIndex}px);
                 animation-timing-function: ease;
                 animation-fill-mode: forwards;
             }
