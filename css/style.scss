@@ -19,6 +19,29 @@
     --source-badge-margin: 10px;
 }
 
+/* Animations used everywhere */
+
+@keyframes appear-from-blur {
+    from { filter: blur(10px) }
+    to { filter: blur(0px) }
+}
+
+@keyframes transparent-fly-in {
+
+    from {
+
+        transform: translateY(-20px);
+    }
+
+    to {
+
+        transform: translateY(0px);
+    }
+
+}
+
+/* End declaring animations */
+
 body {
     padding: 0;
     font-family: DM Serif Display, sans-serif, sans;
@@ -91,11 +114,6 @@ h1 {
     width: 100%;
     overflow: hidden;
 
-    @keyframes carousel-header-appearance {
-        from { filter: blur(10px) }
-        to { filter: blur(0px) }
-    }
-
     .header {
         display: flex;
         flex-direction: row;
@@ -103,7 +121,7 @@ h1 {
         padding-top: var(--margin);
         padding-bottom: var(--margin);
         vertical-align: middle;
-        animation-name: carousel-header-appearance;
+        animation-name: appear-from-blur;
         animation-duration: 1s;
         animation-fill-mode: forwards;
 

@@ -25,6 +25,7 @@
     align-self: center;
     top: calc(-0.5 * var(--profile-picture-size));
     background-color: var(--color-container);
+    animation: 1s ease transparent-fly-in;
 }
 
 #profile-picture-shadow {
@@ -34,6 +35,7 @@
     height: var(--profile-picture-size);
     align-self: center;
     top: calc(-0.5 * var(--profile-picture-size));
+
 }
 
 #profile-picture {
@@ -44,6 +46,7 @@
 #profile-name {
     text-align: center;
     padding-bottom: var(--margin);
+    animation: 1s ease appear-from-blur;
 }
 
 .category {
@@ -53,6 +56,20 @@
 .contribution-graph {
     width: 100%;
     overflow: visible;
+    aspect-ratio: 800 / 215.117;
+
+    .placeholder {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+
+        span {
+            margin: auto;
+        }
+
+    }
 
     .js-calendar-graph-svg {
         overflow: visible;
@@ -68,11 +85,18 @@
 
     }
 
+    .contrib-column {
+        animation-name: appear-from-blur;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    }
+
 }
 
 @keyframes calendar-day {
     to {
-        filter: blur(0px) opacity(100%);
+        filter: blur(0px);
+        opacity: 100%;
         transform: translateY(0px);
     }
 }
@@ -82,7 +106,8 @@
     @for $day from 1 through 7 {
 
         .contribution-graph g > g:nth-child(#{$week}) .ContributionCalendar-day:nth-child(#{$day}) {
-            filter: blur(3px) opacity(0%);
+            filter: blur(3px);
+            opacity: 0;
             transform: translateY(-15px);
             position: relative;
             animation-name: calendar-day;
