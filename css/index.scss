@@ -14,33 +14,35 @@
     margin-top: calc(var(--profile-picture-size) / 2 + var(--margin) * 2);
 }
 
-#profile-picture-frame {
+#profile-picture-wrapper {
     position: absolute;
-    border-radius: 50%;
     width: var(--profile-picture-size);
     height: var(--profile-picture-size);
+    align-self: center;
+    margin-bottom: var(--margin);
+    top: calc(-0.5 * var(--profile-picture-size));
+}
+
+#profile-picture-frame {
+    position: relative;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
     border: 1px solid black;
-    margin-bottom: var(--margin);
-    align-self: center;
-    top: calc(-0.5 * var(--profile-picture-size));
     background-color: var(--color-container);
-    animation: 1s ease transparent-fly-in;
 }
 
 #profile-picture-shadow {
-    position: absolute;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
-    width: var(--profile-picture-size);
-    height: var(--profile-picture-size);
-    align-self: center;
-    top: calc(-0.5 * var(--profile-picture-size));
-
 }
 
 #profile-picture {
     width: 100%;
     height: 100%;
+    animation: 1s ease appear-from-blur;
 }
 
 #profile-name {
@@ -89,24 +91,23 @@
         animation-name: appear-from-blur;
         animation-duration: 1s;
         animation-fill-mode: forwards;
+        will-change: filter;
     }
 
 }
 
 @keyframes calendar-day {
     to {
-        filter: blur(0px);
         opacity: 100%;
         transform: translateY(0px);
     }
 }
 
-@for $week from 1 through 100 {
+@for $week from 1 through 53 {
 
     @for $day from 1 through 7 {
 
         .contribution-graph g > g:nth-child(#{$week}) .ContributionCalendar-day:nth-child(#{$day}) {
-            filter: blur(5px);
             opacity: 0;
             transform: translateY(-15px);
             position: relative;
@@ -114,6 +115,7 @@
             animation-duration: 0.5s;
             animation-delay: #{($week + $day) * 0.01}s;
             animation-fill-mode: forwards;
+            will-change: opacity, filter, transform;
         }
 
     }
