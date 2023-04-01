@@ -91,7 +91,6 @@ body {
 
 }
 
-
 @media (any-hover: hover) {
 
     .rounded-shadow.hover-reactive:hover:after {
@@ -111,6 +110,11 @@ body {
 
 .content-width {
     width: fit-content;
+}
+
+.no-url-highlighting a {
+    color: inherit;
+    text-decoration: inherit;
 }
 
 .top-level-card {
