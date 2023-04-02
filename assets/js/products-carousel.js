@@ -16,55 +16,55 @@ class ProductsCarousel extends HTMLElement {
         super()
 
         this.innerHTML = `
-                <div class="carousel">
-
-            <div class="header horizontally-centered top-level-card">
-                <button id="arrow-left" class="arrow rounded-shadow hover-reactive">
-                    <img src="/assets/navigation-left.png" alt="Arrow Left"/>
-                </button>
-                <button id="arrow-right" class="arrow rounded-shadow hover-reactive">
-                    <img src="/assets/navigation-right.png" alt="Arrow Right"/>
-                </button>
-                <h1>Products</h1>
-                <div class="badge">
-                    {{ site.products.size }}<span> in total</span>
-                </div>
-            </div>
-
-            <div id="carousel-pane"
-                 class="horizontally-centered top-level-card no-url-highlighting"
-                 data-current-entry="0"
-                 data-entry-count="{{ site.products.size }}"
-            >
-
-                {% assign sorted_products = site.products |  sort: "latest_release" %}
-                {% for product in sorted_products reversed %}
-                    <div class="container-wrapper">
-                        <a class="card rounded-shadow hover-reactive container" href="{{ product.url }}">
-                            <div class="icon-frame">
-                                <img class="icon" src="{{ product.icon }}" alt="Product Icon"/>
-                            </div>
-                            <div class="name">{{ product.name }}</div>
-                            <div class="description">{{ product.description | markdownify }}</div>
-                            <div id="icon-container">
-                                {% for source in product.sources %}
-                                    {% assign splitted_source = source |  split: " | " %}
-                                    {% assign type = splitted_source.first | strip %}
-                                    {% assign slugged_name = type | downcase | slugify: "pretty" %}
-                                    <div class="source-badge" data-type="{{ slugged_name }}">
-                                        <img src="{{ "/assets/icon-" |  append: slugged_name |  append: ".png" }}"
-                                             alt="{{ slugged_name }}"
-                                        />
-                                    </div>
-                                {% endfor %}
-                            </div>
-                        </a>
+            <div class="carousel">
+    
+                <div class="header horizontally-centered top-level-card">
+                    <button id="arrow-left" class="arrow rounded-shadow hover-reactive">
+                        <img src="/assets/navigation-left.png" alt="Arrow Left"/>
+                    </button>
+                    <button id="arrow-right" class="arrow rounded-shadow hover-reactive">
+                        <img src="/assets/navigation-right.png" alt="Arrow Right"/>
+                    </button>
+                    <h1>Products</h1>
+                    <div class="badge">
+                        {{ site.products.size }}<span> in total</span>
                     </div>
-                {% endfor %}
-
+                </div>
+    
+                <div id="carousel-pane"
+                     class="horizontally-centered top-level-card no-url-highlighting"
+                     data-current-entry="0"
+                     data-entry-count="{{ site.products.size }}"
+                >
+    
+                    {% assign sorted_products = site.products |  sort: "latest_release" %}
+                    {% for product in sorted_products reversed %}
+                        <div class="container-wrapper">
+                            <a class="card rounded-shadow hover-reactive container" href="{{ product.url }}">
+                                <div class="icon-frame">
+                                    <img class="icon" src="{{ product.icon }}" alt="Product Icon"/>
+                                </div>
+                                <div class="name">{{ product.name }}</div>
+                                <div class="description">{{ product.description | markdownify }}</div>
+                                <div id="icon-container">
+                                    {% for source in product.sources %}
+                                        {% assign splitted_source = source |  split: " | " %}
+                                        {% assign type = splitted_source.first | strip %}
+                                        {% assign slugged_name = type | downcase | slugify: "pretty" %}
+                                        <div class="source-badge" data-type="{{ slugged_name }}">
+                                            <img src="{{ "/assets/icon-" |  append: slugged_name |  append: ".png" }}"
+                                                 alt="{{ slugged_name }}"
+                                            />
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </a>
+                        </div>
+                    {% endfor %}
+    
+                </div>
+    
             </div>
-
-        </div>
         `
 
         let pane = this.querySelector("#carousel-pane")

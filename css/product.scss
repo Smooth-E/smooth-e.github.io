@@ -1,0 +1,113 @@
+---
+---
+
+#banner-container {
+
+  * {
+    transition-duration: 0.25s;
+  }
+
+  #banner-background-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: var(--corner-radius-big);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    #banner-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      filter: blur(0px);
+      z-index: 0;
+    }
+
+    #banner-dimmer {
+      position: relative;
+      background-color: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+
+  }
+
+  #header-content {
+    display: flex;
+    flex-direction: row;
+
+    * {
+      position: relative;
+      z-index: 2;
+    }
+
+    .group {
+      width: 33%;
+    }
+
+    #group-divider {
+      width: var(--margin);
+      height: var(--margin);
+    }
+
+    #group-left {
+
+      #icon {
+        width: 100%;
+        aspect-ratio: 1;
+        background-size: cover;
+        background-position: center;
+        border-radius: var(--corner-radius-big);
+      }
+
+    }
+
+    #group-right {
+      color: white;
+
+      #name {
+        font-size: xxx-large;
+        font-weight: bolder;
+        letter-spacing: 0;
+      }
+
+      #description {
+        padding-top: var(--margin);
+      }
+
+    }
+
+  }
+
+}
+
+@media screen and (any-hover: hover) {
+
+  #banner-container:hover {
+
+    #banner-background {
+      top: calc(-1 * var(--margin)) !important;
+      left: calc(-1 * var(--margin)) !important;
+      width: calc(100% + var(--margin) * 2) !important;
+      height: calc(100% + var(--margin) * 2) !important;
+      filter: blur(7px) !important;
+    }
+
+    #name {
+      letter-spacing: 1.5px !important;
+    }
+
+    #description {
+      transform: skewX(-10deg);
+    }
+
+  }
+
+}

@@ -5,24 +5,82 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>{{ page.title }}</title>
+        <title>{{ page.name }}</title>
+        <link rel="icon" href="{{ page.icon }}"/>
 
         <meta name="HandheldFriendly" content="true" />
         <meta name="MobileOptimized" content="320" />
         <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=no" />
 
         <link rel="stylesheet" type="text/css" href="/css/style.css"/>
-        <link rel="stylesheet" href="/css/contribution-chart.css"/>
+        <link rel="stylesheet" type="text/css" href="/css/contribution-chart.css"/>
+        <link rel="stylesheet" type="text/css" href="/css/carousel.css"/>
+        <link rel="stylesheet" type="text/css" href="/css/product.css"/>
         <link rel="stylesheet"
               type="text/html"
               href="https://fonts.googleapis.com/css?family=dm+serif+display&display=swap"
         />
 
+        <style>
+
+            #banner-background {
+                background-image: url("{{ page.banner }}");
+            }
+
+            #banner-container #icon {
+                background-image: url("{{ page.icon }}");
+            }
+
+        </style>
+
         <script type="text/javascript" src="/assets/js/products-carousel.js" defer></script>
     </head>
-    <body>
+    <body data-from-github="{{ page.from_github }}">
 
+        <div class="horizontally-centered top-level-card">
 
+            <div id="banner-container" class="container rounded-shadow">
+
+                <div id="banner-background-wrapper">
+                    <div id="banner-background"></div>
+                    <div id="banner-dimmer"></div>
+                </div>
+
+                <div id="header-content">
+
+                    <div class="group" id="group-left">
+                        <div id="icon"></div>
+                        <div id="sources">
+                            {% for source in page.sources %}
+                                {% assign splitted_source = source |  split: " | " %}
+                                {% assign type = splitted_source.first | strip %}
+                                {% assign slugged_name = type | downcase | slugify: "pretty" %}
+                                <div class="source-badge" data-type="{{ slugged_name }}">
+                                    <img src="{{ "/assets/icon-" |  append: slugged_name |  append: ".png" }}"
+                                         alt="{{ slugged_name }}"
+                                    />
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div id="group-divider"></div>
+
+                    <div class="group" id="group-right">
+                        <div id="name">{{ page.name }}</div>
+                        <div id="description">{{ page.description }}</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="content">
+                {{ page.content | markdownify }}
+            </div>
+
+        </div>
+
+        <products-carousel></products-carousel>
 
     </body>
 </html>
