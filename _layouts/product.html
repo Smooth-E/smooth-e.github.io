@@ -44,27 +44,46 @@
 
                 <div id="header-content">
 
-                    <div class="group" id="group-left">
-                        <div id="icon"></div>
-                        <div id="sources">
-                            {% for source in page.sources %}
-                                {% assign splitted_source = source |  split: " | " %}
-                                {% assign type = splitted_source.first | strip %}
-                                {% assign slugged_name = type | downcase | slugify: "pretty" %}
-                                <div class="source-badge" data-type="{{ slugged_name }}">
-                                    <img src="{{ "/assets/icon-" |  append: slugged_name |  append: ".png" }}"
-                                         alt="{{ slugged_name }}"
-                                    />
-                                </div>
-                            {% endfor %}
-                        </div>
-                    </div>
+                    <div id="icon"></div>
 
                     <div id="group-divider"></div>
 
                     <div class="group" id="group-right">
+
                         <div id="name">{{ page.name }}</div>
                         <div id="description">{{ page.description }}</div>
+
+                        <div id="sources">
+                            {% assign source_index = 0 %}
+                            {% for source in page.sources %}
+                                {% assign splitted_source = source |  split: " | " %}
+                                {% assign type = splitted_source.first | strip %}
+                                {% assign slugged_name = type | downcase | slugify: "pretty" %}
+                                <div class="source-badge"
+                                     data-type="{{ slugged_name }}"
+                                     style="animation-delay: {{ source_index }}s;"
+                                >
+                                    <img src="{{ "/assets/icon-" |  append: slugged_name |  append: ".png" }}"
+                                         alt="{{ slugged_name }}"
+                                    />
+                                    <div class="source-name">
+                                        {% if slugged_name == "google-play" %}
+                                            Google Play
+                                        {% elsif slugged_name == "documentation" %}
+                                            Read
+                                        {% elsif slugged_name == "itch" %}
+                                            itch.io
+                                        {% elsif slugged_name == "github" %}
+                                            GitHub
+                                        {% elsif slugged_name == "download" %}
+                                            Download
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                {% assign source_index = source_index | plus: 0.1 %}
+                            {% endfor %}
+                        </div>
+
                     </div>
 
                 </div>

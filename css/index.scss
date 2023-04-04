@@ -95,10 +95,12 @@
 }
 
 @keyframes calendar-day {
+
     to {
         opacity: 100%;
         transform: translateY(0px);
     }
+
 }
 
 @for $week from 1 through 53 {
