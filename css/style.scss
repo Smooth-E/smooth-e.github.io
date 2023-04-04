@@ -19,13 +19,19 @@
     --source-badge-margin: 10px;
 }
 
+@font-face {
+    font-family: "OpenSans";
+    src: url("/assets/fonts/opensans.ttf") format("truetype");
+
+}
+
 /* Animations */
 
 @keyframes appear-from-blur {
 
     from {
         opacity: 0;
-        transform: translateY(5px);
+        transform: translateY(10px);
     }
 
     to {
@@ -57,8 +63,12 @@
 body {
     padding: 0;
     margin: 0;
-    font-family: DM Serif Display, sans-serif, sans;
+    font-family: 'OpenSans', sans-serif, serif;
     overflow-x: hidden;
+}
+
+.animated-enter {
+    animation: 1s ease forwards appear-from-blur;
 }
 
 .container {
