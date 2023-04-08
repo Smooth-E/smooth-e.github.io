@@ -53,15 +53,18 @@
                         <div id="name">{{ page.name }}</div>
                         <div id="description">{{ page.description }}</div>
 
-                        <div id="sources">
+                        <div id="sources" class="no-url-highlighting">
                             {% assign source_index = 0 %}
                             {% for source in page.sources %}
                                 {% assign splitted_source = source |  split: " | " %}
                                 {% assign type = splitted_source.first | strip %}
                                 {% assign slugged_name = type | downcase | slugify: "pretty" %}
-                                <div class="source-badge"
-                                     data-type="{{ slugged_name }}"
-                                     style="animation-delay: {{ source_index }}s;"
+                                <a class="source-badge"
+                                   data-type="{{ slugged_name }}"
+                                   style="animation-delay: {{ source_index }}s;"
+                                   href="{{ splitted_source[1] }}"
+                                   target="_blank"
+                                   rel="noreferrer noopener"
                                 >
                                     <img src="{{ "/assets/icon-" |  append: slugged_name |  append: ".png" }}"
                                          alt="{{ slugged_name }}"
@@ -79,7 +82,7 @@
                                             Download
                                         {% endif %}
                                     </div>
-                                </div>
+                                </a>
                                 {% assign source_index = source_index | plus: 0.1 %}
                             {% endfor %}
                         </div>
@@ -96,6 +99,11 @@
         </div>
 
         <products-carousel></products-carousel>
+
+        <a id="button-home" class="no-url-highlighting" href="/index.html">
+            <img src="/assets/icon-home.png" alt="Home Icon"/>
+            <span>Home</span>
+        </a>
 
     </body>
 </html>
