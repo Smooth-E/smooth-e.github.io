@@ -148,27 +148,44 @@
   max-width: 100%;
 }
 
-#button-home {
+#floating-action-button {
   position: sticky;
   width: var(--floating-button-size);
   height: var(--floating-button-size);
+  left: 100%;
   bottom: var(--margin);
-  left: var(--margin);
+  margin-right: var(--margin);
+  margin-top: var(--margin);
   z-index: 100;
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   background-color: rgba(0, 0, 0, 0.8);
   color: white;
-  border-radius: 50%;
+  border-radius: calc(var(--floating-button-size));
   backdrop-filter: blur(10px);
   transition: all 0.3s;
   overflow: hidden;
 
+  #button-home {
+    position: relative;
+    width: var(--floating-button-size);
+    height: var(--floating-button-size);
+    display: flex;
+    flex-direction: row-reverse;
+    overflow: hidden;
+  }
 
   img {
     width: calc(var(--floating-button-size) - var(--margin) * 2);
     height: calc(var(--floating-button-size) - var(--margin) * 2);
     margin: var(--margin);
+  }
+
+  #icon-filled {
+    position: absolute;
+    z-index: 101;
+    opacity: 0;
+    transition: all 0.1s;
   }
 
   span {
@@ -177,6 +194,16 @@
     margin-top: auto;
     margin-bottom: auto;
     transition: all 0.25s;
+  }
+
+  &[data-state="docked"] {
+    width: calc(100% - 2 * var(--margin));
+    border-radius: var(--corner-radius-small);
+
+    #button-home {
+
+    }
+
   }
 
 }
@@ -217,15 +244,24 @@
 
   }
 
-  #button-home:hover {
+  #floating-action-button[data-state="floating"]:hover {
     border-radius: var(--corner-radius-small);
     width: calc(var(--floating-button-size) + 1.2em * 4);
 
-    span {
-      color: white;
-      transition: all 1s;
+    #button-home {
+      width: calc(var(--floating-button-size) + 1.2em * 4);
+
+      span {
+        color: white;
+        transition: all 1s;
+      }
+
     }
 
+  }
+
+  #button-home:hover #icon-filled{
+    opacity: 1;
   }
 
 }

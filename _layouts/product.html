@@ -30,10 +30,11 @@
         </style>
 
         <script type="text/javascript" src="/assets/js/products-carousel.js" defer></script>
+        <script type="text/javascript" src="/assets/js/return-home-button.js" defer></script>
     </head>
     <body data-from-github="{{ page.from_github }}">
 
-        <div class="horizontally-centered top-level-card">
+        <div id="meaningful-part" class="horizontally-centered top-level-card">
 
             <div id="banner-container" class="container rounded-shadow animated-enter">
 
@@ -100,10 +101,13 @@
 
         <products-carousel></products-carousel>
 
-        <a id="button-home" class="no-url-highlighting" href="/index.html">
-            <img src="/assets/icon-home.png" alt="Home Icon"/>
-            <span>Home</span>
-        </a>
+        <div id="floating-action-button" class="no-url-highlighting">
+            <a id="button-home" href="/index.html">
+                <img id="icon-outlined" src="/assets/icon-home.png" alt="Home Icon"/>
+                <img id="icon-filled" src="/assets/icon-home-filled.png" alt="Filled Home Icon"/>
+                <span>Home</span>
+            </a>
+        </div>
 
     </body>
 </html>
