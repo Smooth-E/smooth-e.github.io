@@ -163,8 +163,8 @@
   color: white;
   border-radius: calc(var(--floating-button-size));
   backdrop-filter: blur(10px);
-  transition: all 0.3s;
   overflow: hidden;
+  transition: all 0.3s;
 
   #button-home {
     position: relative;
@@ -173,35 +173,64 @@
     display: flex;
     flex-direction: row-reverse;
     overflow: hidden;
+
+    img {
+      width: calc(var(--floating-button-size) - var(--margin) * 2);
+      height: calc(var(--floating-button-size) - var(--margin) * 2);
+      margin: var(--margin);
+    }
+
+    span {
+      color: rgba(255, 255, 255, 0);
+      font-size: 1.2em;
+      margin-top: auto;
+      margin-bottom: auto;
+      transition: all 0.25s;
+    }
+
+    #icon-filled {
+      position: absolute;
+      z-index: 101;
+      opacity: 0;
+      transition: all 0.1s;
+    }
+
   }
 
-  img {
-    width: calc(var(--floating-button-size) - var(--margin) * 2);
-    height: calc(var(--floating-button-size) - var(--margin) * 2);
-    margin: var(--margin);
-  }
-
-  #icon-filled {
-    position: absolute;
-    z-index: 101;
-    opacity: 0;
-    transition: all 0.1s;
-  }
-
-  span {
-    color: rgba(255, 255, 255, 0);
-    font-size: 1.2em;
-    margin-top: auto;
-    margin-bottom: auto;
-    transition: all 0.25s;
+  #copyright-notice {
+    display: none;
   }
 
   &[data-state="docked"] {
     width: calc(100% - 2 * var(--margin));
     border-radius: var(--corner-radius-small);
 
-    #button-home {
+    @keyframes copyright-notice-appearance {
 
+      0% {
+        transform: translateX(-10px);
+        opacity: 0;
+        letter-spacing: 0;
+      }
+
+      100% {
+        transform: translateX(0px);
+        opacity: 1;
+        letter-spacing: 0.1px;
+      }
+
+    }
+
+    #copyright-notice {
+      position: relative;
+      display: block;
+      margin: auto auto auto var(--margin);
+      font-size: large;
+      font-weight: 400;
+      left: 0;
+      animation: ease 0.5s forwards copyright-notice-appearance;
+      animation-delay: 0.3s;
+      opacity: 0;
     }
 
   }
@@ -261,7 +290,7 @@
   }
 
   #button-home:hover #icon-filled{
-    opacity: 1;
+    opacity: 1 !important;
   }
 
 }
