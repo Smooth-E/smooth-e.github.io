@@ -1,14 +1,14 @@
 ---
 latest_release: 2023-03-18
-icon: /assets/products/wireless-debugging-switch-widget.png
+icon: /assets/products/wadbs/icon.png
 name: WADBS
-banner: /assets/products/wadbs-banner-aedrian-leaves.jpg
+banner: /assets/products/wadbs/banner.jpg
 description: An app that allows you to switch Android's Wireless Debugging feature on and off quickly. It provides several widgets and a quick settings tile to do this.
 sources:
     - github | https://github.com/Smooth-E/wireless-adb-switch
 ---
 
-<img src="https://raw.githubusercontent.com/Smooth-E/wireless-adb-switch/main/media/banner.png" alt="Wireless Debugging Switch Widget"/>
+<img src="/assets/products/wadbs/banner-with-name.png" alt="Wireless Debugging Switch Widget"/>
 
 **Wireless Debugging Switch Widget** (or **WADBS** for short) is an app that allows you to switch Android's Wireless Debugging feature on and off quickly.
 It provides several widgets and a quick settings tile to do this.
@@ -16,10 +16,10 @@ You can also instantly connect to your PC using KDE Connect's clipboard sharing 
 
 ## Features
 
-<img src="https://raw.githubusercontent.com/Smooth-E/wireless-adb-switch/main/media/feature-qs-tile.png" alt="Quick Settings Tile"/>
-<img src="https://raw.githubusercontent.com/Smooth-E/wireless-adb-switch/main/media/feature-widgets.png" alt="Home Screen Widgets"/>
-<img src="https://raw.githubusercontent.com/Smooth-E/wireless-adb-switch/main/media/feature-customization.png" alt="Widget Customization"/>
-<img src="https://raw.githubusercontent.com/Smooth-E/wireless-adb-switch/main/media/feature-instant-connection.png" alt="Instant Connection"/>
+<img src="/assets/products/wadbs/feature-qs-tile.png" alt="Quick Settings Tile"/>
+<img src="/assets/products/wadbs/feature-widgets.png" alt="Home Screen Widgets"/>
+<img src="/assets/products/wadbs/feature-customization.png" alt="Widget Customization"/>
+<img src="/assets/products/wadbs/feature-instant-connection.png" alt="Instant Connection"/>
 
 ## Credits
 

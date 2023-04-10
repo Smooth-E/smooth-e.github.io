@@ -41,9 +41,7 @@ class ProductsCarousel extends HTMLElement {
                     {% for product in sorted_products reversed %}
                         <div class="container-wrapper">
                             <a class="card rounded-shadow hover-reactive container" href="{{ product.url }}">
-                                <div class="icon-frame">
-                                    <img class="icon" src="{{ product.icon }}" alt="Product Icon"/>
-                                </div>
+                                <div class="icon" style='background-image: url("{{ product.icon }}")'></div>
                                 <div class="name">{{ product.name }}</div>
                                 <div class="description">{{ product.description | markdownify }}</div>
                                 <div id="icon-container">
