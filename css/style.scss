@@ -11,6 +11,8 @@
     --corner-radius-small: 20px;
 
     --margin: 15px;
+    --clamped-max-width: 1000px;
+    --top-level-card-max-width: 800px;
 
     --product-card-width: 250px;
     --button-icon-size: 25px;
@@ -77,6 +79,7 @@ body {
     margin: 0;
     font-family: 'OpenSans', sans-serif, serif;
     overflow-x: hidden;
+    background-color: var(--color-on-secondary);
 }
 
 .animated-enter {
@@ -122,7 +125,7 @@ body {
 }
 
 .clamped {
-    max-width: 1000px;
+    max-width: var(--clamped-max-width);
 }
 
 .horizontally-centered {
@@ -141,7 +144,7 @@ body {
 
 .top-level-card {
     width: calc(100% - var(--margin) * 4);
-    max-width: 800px;
+    max-width: var(--top-level-card-max-width);
 }
 
 h1 {
@@ -155,14 +158,6 @@ h1 {
     padding: calc(var(--margin) / 2);
     margin: auto var(--margin);
     color: var(--color-container);
-}
-
-@media screen and (max-width: 405px) {
-
-    .carousel .badge span{
-        display: none;
-    }
-
 }
 
 .button {

@@ -1,5 +1,4 @@
 ---
-layout: product
 latest_release: 2022-05-24
 icon: /assets/products/monet-color-previewer.png
 name: Material You Color Previewer

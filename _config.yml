@@ -58,5 +58,10 @@ collections:
   products:
     output: true
 
-sass:
-  sass_dir: _sass
+defaults:
+  -
+    scope:
+      path: ""
+      type: "products"
+    values:
+      layout: "product"

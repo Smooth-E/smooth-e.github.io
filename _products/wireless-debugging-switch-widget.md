@@ -1,5 +1,4 @@
 ---
-layout: product
 latest_release: 2023-03-18
 icon: /assets/products/wireless-debugging-switch-widget.png
 name: WADBS

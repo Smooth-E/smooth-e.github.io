@@ -1,5 +1,4 @@
 ---
-layout: product
 icon: /assets/products/gdxtris.png
 banner: /assets/products/gdxtris-banner.png
 name: GdxTris
