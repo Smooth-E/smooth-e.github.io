@@ -19,60 +19,131 @@
 
     --source-badge-padding: 5px;
     --source-badge-margin: 10px;
+
+    --code-block-background: #EFF1F3;
+    --code-block-corner-radius: 6px;
+    --code-block-vertical-padding: 2px;
+    --code-block-horizontal-padding: 6px;
+
+    --blockquote-bar-width: 4px;
+    --blockquote-bar-color: #D0D7DE;
+    --blockquote-text-color: #656d76;
 }
 
-@font-face {
-    font-family: "OpenSans";
-    src: url("/assets/fonts/opensans.ttf") format("truetype");
+// Section  fonts
+:root {
 
-}
+    @font-face {
+        font-family: "OpenSans";
+        src: url("/assets/fonts/opensans.ttf") format("truetype");
 
-@font-face {
-    font-family: "IBM Plex Sans";
-    src: url("/assets/fonts/ibm-plex-sans.ttf") format("truetype");
-
-}
-
-@font-face {
-    font-family: "IBM Plex Mono";
-    src: url("/assets/fonts/ibm-plex-mono.ttf") format("truetype");
-
-}
-
-/* Animations */
-
-@keyframes appear-from-blur {
-
-    from {
-        opacity: 0;
-        transform: translateY(10px);
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0px);
+    @font-face {
+        font-family: "OpenSans Light";
+        src: url("/assets/fonts/opensans-light.ttf") format("truetype");
+
     }
 
-}
+    @font-face {
+        font-family: "IBM Plex Sans";
+        src: url("/assets/fonts/ibm-plex-sans.ttf") format("truetype");
 
-// Used from product-carousel.js
-@keyframes card-appearance {
-    to { transform: translate(0, 0); }
-}
-
-@keyframes transparent-fly-in {
-
-    from {
-        transform: translateY(-20px);
     }
 
-    to {
-        transform: translateY(0px);
+    @font-face {
+        font-family: "IBM Plex Mono";
+        src: url("/assets/fonts/ibm-plex-mono.ttf") format("truetype");
+    }
+
+    @font-face {
+        font-family: "JetBrains Mono";
+        src: url("/assets/fonts/jetbrains-mono.ttf") format("truetype");
     }
 
 }
 
-/* End animations */
+// Animations
+:root {
+
+    @keyframes appear-from-blur {
+
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+
+    }
+
+    // Used from product-carousel.js
+    @keyframes card-appearance {
+        to {
+            transform: translate(0, 0);
+        }
+    }
+
+    @keyframes transparent-fly-in {
+
+        from {
+            transform: translateY(-20px);
+        }
+
+        to {
+            transform: translateY(0px);
+        }
+
+    }
+
+}
+
+// Markdown stuff
+.markdown {
+
+    code, pre.highlight {
+        background: var(--code-block-background);
+        font-family: "IBM Plex Mono", monospace;
+        padding: var(--code-block-vertical-padding) var(--code-block-horizontal-padding);
+        line-height: calc(100% + 10px);
+        border-radius: var(--code-block-corner-radius);
+        font-weight: 100 !important;
+    }
+
+    div.highlight {
+        overflow: hidden;
+        border-radius: var(--code-block-corner-radius);
+
+        pre.highlight {
+            overflow-x: scroll;
+            margin: 0;
+        }
+
+    }
+
+    blockquote {
+        position: relative;
+        margin-right: 0;
+        margin-left: calc(var(--blockquote-bar-width) + var(--margin));
+        color: var(--blockquote-text-color);
+
+        &::before {
+            content: "";
+            position: absolute;
+            display: block;
+            width: var(--blockquote-bar-width);
+            height: 100%;
+            background: var(--blockquote-bar-color);
+            left: calc(-1 * var(--margin));
+            border-radius: var(--blockquote-bar-width);
+        }
+
+    }
+
+}
 
 body {
     padding: 0;
@@ -145,11 +216,6 @@ body {
 .top-level-card {
     width: calc(100% - var(--margin) * 4);
     max-width: var(--top-level-card-max-width);
-}
-
-h1 {
-    font-size: x-large;
-    font-weight: bold;
 }
 
 .badge {
