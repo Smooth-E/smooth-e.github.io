@@ -13,38 +13,59 @@
         <meta name="MobileOptimized" content="320" />
         <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=no" />
 
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+        />
+
         <link rel="stylesheet" type="text/css" href="/css/style.css"/>
         <link rel="stylesheet" type="text/css" href="/css/index.css"/>
         <link rel="stylesheet" type="text/css" href="/css/contribution-chart.css"/>
         <link rel="stylesheet" type="text/css" href="/css/carousel.css"/>
-
-        <script type="text/javascript" src="/assets/js/products-carousel.js" defer></script>
     </head>
 
     <body>
-
-        <div class="horizontally-centered container rounded-shadow content-width top-level-card" id="intro">
-            <div id="profile-picture-wrapper">
-                <div id="profile-picture-frame">
-                    <img id="profile-picture" class="animated-enter" src="assets/profile-pic.png"/>
-                </div>
-                <div id="profile-picture-shadow" class="rounded-shadow"></div>
+        <div class="toolbar">
+            <div class="toolbar-header">Personal Website!</div>
+            <div class="align-right">
+                <a class="toolbar-button">Main</a>
+                <a class="toolbar-button">Projects</a>
+                <a class="toolbar-button">Blog</a>
             </div>
-            <h1 id="profile-name" class="animated-enter">Smooth E</h1>
-
-            <script src="/assets/js/github-calendar.js"></script>
-            <div class="contribution-graph">
-                <div class="placeholder">
-                    <span>Loading the data just for you.</span>
-                </div>
-            </div>
-            <script type="module">
-                GitHubCalendar(".contribution-graph", "smooth-e", { responsive: true });
-            </script>
         </div>
-
-        <products-carousel></products-carousel>
-
+        <div class="content">
+            <div class="avatar-container">
+                <img class="avatar" src="/assets/profile-pic.png" alt="Profile Picture"/>
+            </div>
+            <p class="branding">Smooth-E</p>
+            <p class="description">I develop mobile apps and games...</p>
+            <p class="contacts-header">You can contact me through these:</p>
+            <div class="contacts-cluster">
+                <a class="contact-link email" href="mailto:smoothie@disroot.org"><i class="ph ph-envelope"></i> E-Mail</a>
+                <A class="contact-link discord" href="something idk"><i class="ph ph-discord-logo"></i> Discord</a>
+            </div>
+            <h1>Projects</h1>
+            <div class="projects-category">
+                <img class="category-icon" src="/assets/icons/phone.png" alt="Android"/>
+                <p class="category-title">Android Apps</p>
+                <p class="category-description">Various Android applications, mainly open source. Some have a pretty specific purpose, some are efforts to resurrect abandoned OSS projects.</p>
+            </div>
+            <div class="projects-category">
+                <img class="category-icon" src="/assets/icons/games.png" alt="Games"/>
+                <p class="category-title">Games</p>
+                <p class="category-description">I started looking into game development when I was in high school. In this section are some of my games and game-related efforts. I worked with Unity, Godot and LibGDX among others.</p>
+            </div>
+            <div class="projects-category">
+                <img class="category-icon" src="/assets/icons/aurora-os.png" alt="Aurora OS"/>
+                <p class="category-title">Aurora OS Apps</p>
+                <p class="category-description">Aurora OS is a mobile OS project that's branched off of Sailfish OS some time ago. I ported several Sailfish and Linux apps to it and also developed some new ones.</p>
+            <div class="projects-category">
+                <img class="category-icon" src="/assets/icons/other.png" alt="Other"/>
+                <p class="category-title">Other Stuff</p>
+                <p class="category-description">Project that did not match any of the above categories go into here. Tutorials, small utilities and library forks.</p>
+            </div>
+        </div>
     </body>
 
 </html>
