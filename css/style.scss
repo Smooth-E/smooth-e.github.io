@@ -2,281 +2,165 @@
 ---
 
 :root {
-    --color-container: #FFF;
-    --color-shadow: rgba(0, 0, 0, 0.7);
-    --color-on-secondary: #FFF;
-    --color-badge: #949494;
+    --window-frame-color1: #081BCB;
+    --window-frame-color2: #4977B4;
+    --window-frame-color3: #0062EA;
+    --window-frame-color4: #14A5F4;
+    --window-frame-color5: #8EB6D9;
+    --window-frame-color6: #5DB3FF;
+    --start-button-color1: #008D00;
+    --start-button-color2: #31A431;
+    --start-button-color3: #5EDB5E;
 
-    --corner-radius-big: 35px;
-    --corner-radius-small: 20px;
+    --color-pane: #E6EAD8;
 
-    --margin: 15px;
-    --clamped-max-width: 1000px;
-    --top-level-card-max-width: 800px;
-
-    --product-card-width: 250px;
-    --button-icon-size: 25px;
-
-    --source-badge-padding: 5px;
-    --source-badge-margin: 10px;
-
-    --code-block-background: #EFF1F3;
-    --code-block-corner-radius: 6px;
-    --code-block-vertical-padding: 2px;
-    --code-block-horizontal-padding: 6px;
-
-    --blockquote-bar-width: 4px;
-    --blockquote-bar-color: #D0D7DE;
-    --blockquote-text-color: #656d76;
-}
-
-// Fonts
-:root {
-
-    @font-face {
-        font-family: "OpenSans";
-        src: url("/assets/fonts/opensans.ttf") format("truetype");
-
-    }
-
-    @font-face {
-        font-family: "OpenSans Light";
-        src: url("/assets/fonts/opensans-light.ttf") format("truetype");
-
-    }
-
-    @font-face {
-        font-family: "IBM Plex Sans";
-        src: url("/assets/fonts/ibm-plex-sans.ttf") format("truetype");
-
-    }
-
-    @font-face {
-        font-family: "IBM Plex Mono";
-        src: url("/assets/fonts/ibm-plex-mono.ttf") format("truetype");
-    }
-
-    @font-face {
-        font-family: "JetBrains Mono";
-        src: url("/assets/fonts/jetbrains-mono.ttf") format("truetype");
-    }
-
-}
-
-// Animations
-:root {
-
-    @keyframes appear-from-blur {
-
-        from {
-            opacity: 0;
-            transform: translateY(10px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0px);
-        }
-
-    }
-
-    // Used from product-carousel.js
-    @keyframes card-appearance {
-        to {
-            transform: translate(0, 0);
-        }
-    }
-
-    @keyframes transparent-fly-in {
-
-        from {
-            transform: translateY(-20px);
-        }
-
-        to {
-            transform: translateY(0px);
-        }
-
-    }
-
-}
-
-// Markdown stuff
-.markdown {
-
-    code, pre.highlight {
-        background: var(--code-block-background);
-        font-family: "IBM Plex Mono", monospace;
-        padding: var(--code-block-vertical-padding) var(--code-block-horizontal-padding);
-        line-height: calc(100% + 10px);
-        border-radius: var(--code-block-corner-radius);
-        font-weight: 100 !important;
-    }
-
-    div.highlight {
-        overflow: hidden;
-        border-radius: var(--code-block-corner-radius);
-
-        pre.highlight {
-            overflow-x: scroll;
-            margin: 0;
-        }
-
-    }
-
-    blockquote {
-        position: relative;
-        margin-right: 0;
-        margin-left: calc(var(--blockquote-bar-width) + var(--margin));
-        color: var(--blockquote-text-color);
-
-        &::before {
-            content: "";
-            position: absolute;
-            display: block;
-            width: var(--blockquote-bar-width);
-            height: 100%;
-            background: var(--blockquote-bar-color);
-            left: calc(-1 * var(--margin));
-            border-radius: var(--blockquote-bar-width);
-        }
-
-    }
-
+    --wallpaper: url("/assets/wallpaper/coffee-tile.png");
 }
 
 body {
-    padding: 0;
+    height: 100vh;
     margin: 0;
-    font-family: 'OpenSans', sans-serif, serif;
-    overflow-x: hidden;
-    background-color: var(--color-on-secondary);
+    padding: 0;
+    background-image: var(--wallpaper);
+    font-family: "XP Tahoma", sans-serif;
+    font-size: 20px;
 }
 
-.animated-enter {
-    animation: 1s ease forwards appear-from-blur;
-}
+.taskbar {
+    width: 100%;
+    height: 35px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    background:
+        linear-gradient(to top, rgba(50, 50, 50, 0.5) 5%, transparent 15%, transparent),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.5) 5%, transparent 15%, transparent),
+        linear-gradient(to left, var(--window-frame-color3));
 
-.container {
-    position: relative;
-    margin: var(--margin);
-    border-radius: var(--corner-radius-big);
-    padding: var(--margin);
-    background-color: var(--color-container);
-}
-
-.rounded-shadow {
-
-    &:after {
-        content: "";
-        background-color: var(--color-shadow);
-        position: absolute;
+    .controls {
         width: 100%;
         height: 100%;
-        left: 0;
-        top: 0;
-        border-radius: var(--corner-radius-big);
-        filter: blur(10px);
-        transition: filter .1s ease;
-        z-index: -10;
+        max-width: 800px;
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+
+        .start-button {
+            position: relative;
+            height: calc(100% + 2px);
+            border-radius: 50vh;
+            background: var(--start-button-color3);
+            border: none;
+            display: flex;
+            align-items: center;
+            padding: 7px;
+            margin-right: 7px;
+            border-radius: 50vh;
+            overflow: hidden;
+            box-shadow: 
+                inset 0 0 10px #0008, 
+                1px 0 2px rgba(255, 255, 255, 0.5),
+                -1px 0 2px rgba(255, 255, 255, 0.5),
+            ;
+
+            @media (max-width: 800px){
+                border-radius: 0 50vh 50vh 0;
+            }
+
+            .icon {
+                width: 25px;
+                height: 25px;
+            }
+
+            .title {
+                color: white;
+                text-shadow: 1px 1px black;
+                font-weight: bold;
+                font-size: 1.25em;
+                margin-left: 7px;
+                margin-right: 10px;
+            }
+        }
+
+        .program {
+            position: relative;
+            display: flex;
+            height: 70%;
+            min-width: 100px;
+            border-radius: 3px;
+            align-items: center;
+            color: white;
+            font-size: 1em;
+            font-weight: 100;
+            padding: 0px 5px 0 5px;
+            background: var(--window-frame-color4);
+            box-shadow:
+                inset 1px 1px 3px rgba(255, 255, 255, 0.5),
+                inset -1px -1px 3px rgba(50, 50, 50, 0.5),
+                1px 1px 3px rgba(0, 0, 0, 0.2)
+            ;
+            margin-right: 3px;
+            
+            &.selected {
+                background: linear-gradient(rgba(0, 0, 0, 0.05)), linear-gradient(var(--window-frame-color3));
+                box-shadow:
+                    inset 1px 1px 3px rgba(0, 0, 0, 0.5),
+                    inset -1px -1px 3px rgba(0, 0, 0, 0.5),
+                    1px 1px 3px rgba(255, 255, 255, 0.2)
+                ;
+            }
+
+            .icon {
+                display: inline-block;
+                height: 20px;
+                margin-right: 5px;
+            }
+        }
     }
-
-    &.hover-reactive:active::after {
-        filter: blur(4px) !important;
-    }
-
 }
 
-@media (any-hover: hover) {
-
-    .rounded-shadow.hover-reactive:hover:after {
-        filter: blur(7px);
-    }
-
+.center-column {
+    margin-left: calc(50% - 350px);
+    width: 700px
 }
 
-.clamped {
-    max-width: var(--clamped-max-width);
-}
+.window {
+    display: inline-block;
+    background: linear-gradient(to top left, var(--window-frame-color1), transparent),
+                linear-gradient(to top right, var(--window-frame-color2), transparent),
+                linear-gradient(to bottom left, var(--window-frame-color3), transparent),
+                linear-gradient(to bottom right, var(--window-frame-color4), transparent);
+    border-radius: 7px 7px 0 0;
+    border: 1px solid var(--window-frame-color1);
+    padding: 3px;
 
-.horizontally-centered {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.content-width {
-    width: fit-content;
-}
-
-.no-url-highlighting a, a.no-url-highlighting {
-    color: inherit;
-    text-decoration: inherit;
-}
-
-.top-level-card {
-    width: calc(100% - var(--margin) * 4);
-    max-width: var(--top-level-card-max-width);
-}
-
-.badge {
-    border-radius: calc(var(--corner-radius-small) / 2);
-    background-color: var(--color-shadow);
-    padding: calc(var(--margin) / 2);
-    margin: auto var(--margin);
-    color: var(--color-container);
-}
-
-.button {
-    border-radius: var(--corner-radius-small);
-    color: var(--color-on-secondary);
-    padding: var(--margin);
-    display: flex;
-    flex-direction: row;
-    font-size: calc(var(--button-icon-size) / 1.2);
-    text-decoration: none;
-
-    img {
-        width: var(--button-icon-size);
-        height: var(--button-icon-size);
-        margin-inline-end: var(--margin);
-    }
-
-    .navigation-icon {
-        margin-inline-start: auto;
-        margin-inline-end: 0;
-    }
-
-}
-
-.source-badge {
-    width: var(--button-icon-size);
-    height: var(--button-icon-size);
-    border-radius: 50%;
-    padding: var(--source-badge-padding);
-
-    img {
+    .header {
+        display: flex;
+        align-items: center;
         width: 100%;
-        height: 100%;
+        height: 25px;
+        padding-bottom: 3px;
+        color: white;
+
+        .icon {
+            width: 17px;
+            height: 17px;
+            margin-left: 3px;
+            margin-right: 5px;
+        }
+
+        .title {
+            font-size: 17px;
+            font-weight: bold;
+            text-shadow: 1px 1px black;
+        }
     }
 
+    .content {
+        display: inline-block;
+        width: 100%;
+        height: calc(100% - 25px - 3px);
+        background: white;
+    }
 }
 
-.source-badge[data-type="github"] {
-    background-color: #24292F;
-}
-
-.source-badge[data-type="itch"] {
-    background-color: #FA5C5C;
-}
-
-.source-badge[data-type="google-play"] {
-    background-color: #059B70;
-}
-
-.source-badge[data-type="download"] {
-    background-color: #00AAD5;
-}
-
-.source-badge[data-type="documentation"] {
-    background-color: #3F627F;
-}

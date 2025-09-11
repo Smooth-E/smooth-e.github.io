@@ -1,151 +1,25 @@
 ---
 ---
 
-:root {
-    --profile-picture-size: 120px;
-}
-
-h1 {
-    font-size: x-large;
-    font-weight: bold;
-}
-
-#intro {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    padding-top: calc(var(--profile-picture-size) / 2 + var(--margin));
-    margin-top: calc(var(--profile-picture-size) / 2 + var(--margin) * 2);
-}
-
-#profile-picture-wrapper {
-    position: absolute;
-    width: var(--profile-picture-size);
-    height: var(--profile-picture-size);
-    align-self: center;
-    margin-bottom: var(--margin);
-    top: calc(-0.5 * var(--profile-picture-size));
-}
-
-#profile-picture-frame {
-    position: relative;
-    border-radius: 50%;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    border: 1px solid black;
-    background-color: var(--color-container);
-}
-
-#profile-picture-shadow {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-}
-
-#profile-picture {
-    width: 100%;
-    height: 100%;
-}
-
-#profile-name {
-    text-align: center;
-    padding-bottom: var(--margin);
-}
-
-.category {
-    margin-top: calc(var(--margin) * 2);
-}
-
-.contribution-graph {
-    width: 100%;
-    overflow: visible;
-    aspect-ratio: 800 / 215.117;
-
-    .placeholder {
-        position: relative;
+#window-about {    
+    .pane {
         display: flex;
-        flex-direction: column;
-        height: 100%;
-        width: 100%;
-
-        span {
-            margin: auto;
-        }
-
+        background: var(--color-pane);
+        padding: 20px;
     }
 
-    .js-calendar-graph-svg {
-        overflow: visible;
-
-        & > g {
-            transform: translate(0, 0) !important;
-
-            .ContributionCalendar-label {
-                display: none;
-            }
-
-        }
-
+    #avatar {
+        width: 100px;
+        height: 100px;
     }
 
-    .contrib-column {
-        animation-name: appear-from-blur;
-        animation-duration: 1s;
-        animation-fill-mode: forwards;
-        will-change: filter;
+    #username {
+        margin-left: 20px;
+        font-size: 2em;
+        font-weight: bolder;
     }
 
-}
-
-@keyframes calendar-day {
-
-    to {
-        opacity: 100%;
-        transform: translateY(0px);
+    #intro {
+        margin-left: 20px;
     }
-
-}
-
-@for $week from 1 through 53 {
-
-    @for $day from 1 through 7 {
-
-        .contribution-graph g > g:nth-child(#{$week}) .ContributionCalendar-day:nth-child(#{$day}) {
-            opacity: 0;
-            transform: translateY(-15px);
-            position: relative;
-            animation-name: calendar-day;
-            animation-duration: 0.5s;
-            animation-delay: #{($week + $day) * 0.01}s;
-            animation-fill-mode: forwards;
-            will-change: opacity, filter, transform;
-        }
-
-    }
-
-}
-
-@media screen and (max-width: 700px) {
-
-    .contribution-graph {
-        display: flex;
-        flex-direction: column;
-        width: 105%;
-        transform: translateX(-2.5%);
-
-        .contrib-column {
-            width: 100%;
-            padding-right: 0;
-            padding-left: 0;
-            padding-bottom: 0;
-        }
-
-        .contrib-column-first {
-            padding-top: 0;
-        }
-
-    }
-
 }

@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'XP Tahoma';
+    src: url("/assets/fonts/xp-tahoma/windows-xp-tahoma.otf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Jost';
+    src: url("/assets/fonts/jost/Jost-VariableFont_wght.ttf");
+}
