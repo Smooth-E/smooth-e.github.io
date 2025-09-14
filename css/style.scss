@@ -22,6 +22,15 @@
     --base-green:     #13920D;
 
     --control-blue-select: #003CA5;
+    --control-dark-grey:   #808080;
+    --control-middle-grey: #A1A192;
+    --control-dark-beige:  #B8B4A3;
+    --control-beige:       #C7C5B2;
+    --control-light-beige: #C9C7BA;
+    --control-white:       #EBEBEE;
+    --control-orange:      #E68B2C;
+
+    --button-border-normal: rgb(127, 157, 185);
 
     --wallpaper: url("/assets/wallpaper/coffee-tile.png");
 }
@@ -153,7 +162,8 @@ h1, h2, h3, p {
 }
 
 .window {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     position: relative;
     background: 
         linear-gradient(to top left, var(--window-frame-color1), transparent),
@@ -219,7 +229,6 @@ h1, h2, h3, p {
     .content {
         display: inline-block;
         width: calc(100% - 8px);
-        height: calc(100% - 25px - 4px);
         margin-right: 4px;
         margin-left: 4px;
         margin-bottom: 4px;
@@ -234,6 +243,45 @@ h1, h2, h3, p {
 .intro-underline {
     height: 5px;
     background: linear-gradient(to right, white, var(--base-orange) 25% 75%, white);
+}
+
+.pane {
+    background:
+    linear-gradient(to bottom, var(--control-dark-beige), transparent 2px),
+        linear-gradient(var(--base-beige), var(--base-beige)),
+    ;
+    color: var(--control-dark-grey);
+    text-shadow: 0 0 2px var(--control-dark-beige);
+}
+
+a.button {
+    display: flex;
+    flex-direction: row;
+    border-radius: 4px;
+    font-size: 1em;
+    padding: 3px 7px 3px 7px;
+    text-decoration: none;
+    color: black;
+    border: 1px solid var(--button-border-normal);
+    background: linear-gradient(to bottom, var(--control-white), var(--control-light-beige));
+    gap: 7px;
+
+    img {
+        width: 1em;
+        height: 1em;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    &:hover {
+        position: relative;
+        box-shadow: inset 0 0 3px var(--control-orange);
+    }
+
+    &:active {
+        background: var(--control-dark-beige);
+        box-shadow: inset 0 2px 4px var(--control-dark-grey), inset 0 -2px 4px var(--control-beige);
+    }
 }
 
 a.with-icon {

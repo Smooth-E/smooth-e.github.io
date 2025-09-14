@@ -1,25 +1,58 @@
 ---
-permalink: /404.html
-layout: default
 ---
 
-<style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="icon" href="/assets/icons/no-page-48.png"/>
+        <title>Page not found!</title>
 
-<div class="container">
-  <h1>404</h1>
+        <meta name="HandheldFriendly" content="true" />
+        <meta name="MobileOptimized" content="320" />
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=no" />
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+        <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="/css/404.css"/>
+    </head>
+
+    <body>
+        <div id="window-warning" class="window">
+            <div class="header">
+                <img class="icon" src="/assets/icons/warning-48.png"/>
+                <span class="title">Warning!</span>
+            </div>
+            <div class="content">
+                <div id="main">
+                    <img src="/assets/icons/no-page-48.png"/>
+                    <div>
+                        <span id="header">Page not found!</span>
+                        <span id="description">There is no such page on the website.</span>
+                    </div>
+                </div>
+                <div class="intro-underline"></div>
+                <div id="explanation">
+                    <p>
+                        The page you are looking for has either moved or never existed in the first place.
+                        Make sure you typed the correct url and your internet bills are paid.
+                    </p>
+                    <p>
+                        If you think this is a mistake, file an issue here: <a href="">GitHub Issues</a>.
+                    </p>
+                </div>
+                <div class="pane" id="pane">
+                    <span id="copyright">© 2025 Smooth-E</span>
+                    <div id="buttons">
+                        <a class="button" href="javascript:history.back()">
+                            <img src="/assets/icons/back-48.png"/>
+                            <span>Back</span>
+                        </a>
+                        <a class="button" href="/index.html">
+                            <img src="/assets/icons/home-48.png"/>
+                            <span>Home</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

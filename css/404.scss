@@ -1,0 +1,79 @@
+---
+---
+
+:root {
+    --wallpaper: url("/assets/wallpaper/blue-tile.png")
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-content: space-around;
+}
+
+#window-warning {
+    width: 600px;
+    margin: auto;
+
+    @media (max-width: 640px) {
+        width: calc(100% - 40px);
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #main {
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+        background: linear-gradient(to bottom left, white, var(--control-dark-grey));
+
+        img {
+            width: 48px;
+            height: 48px;
+            margin-right: 10px;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #header {
+            color: black;
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+
+        #description {
+            color: black;
+            font-size: 1.1em;
+            margin-top: 2px;
+        }
+    }
+
+    #explanation {
+        padding: 10px;
+    }
+
+    #pane {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px;
+    }
+
+    #copyright {
+        margin-top: auto;
+        margin-bottom: 0;
+    }
+
+    #buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 7px;
+    }
+}
