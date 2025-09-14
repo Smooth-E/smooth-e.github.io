@@ -7,13 +7,12 @@
     <head>
         <meta charset="utf-8"/>
         <link rel="icon" href="/assets/profile-pic.png"/>
-        <title>Smooth E</title>
+        <title>Smooth-E</title>
 
         <meta name="HandheldFriendly" content="true" />
         <meta name="MobileOptimized" content="320" />
         <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=no" />
 
-        <link rel="stylesheet" type="text/css" href="/css/fonts.css"/>
         <link rel="stylesheet" type="text/css" href="/css/style.css"/>
         <link rel="stylesheet" type="text/css" href="/css/index.css"/>
     </head>
@@ -25,28 +24,81 @@
                     <img class="icon" src="/assets/icons/around-planet.png"/>
                     <span class="title">Explore</span>
                 </button>
-                <div class="program">
-                    <img class="icon" src="/assets/icons/articles-folder-48.png"/>
-                    Articles
-                </div>
-                <div class="program selected">
+                <a class="program selected">
                     <img class="icon" src="/assets/icons/home-48.png"/>
                     Home
-                </div>
+                </a>
             </div>
         </div>
         <div class="center-column">
-            <div id="window-about" style="width: 100%;" class="window">
+            <div class="window" id="window-about">
                 <div class="header">
                     <img class="icon" src="/assets/icons/star-48.png"/>
                     <span class="title">About me!
                     </span>
                 </div>
                 <div class="content">
-                    <p style="padding: 10px;">
-                        Lorem ipsum is a dummy or placeholder text commonly used in graphic design, publishing, and web development. Its purpose is to permit a page layout to be designed, independently of the copy that will subsequently populate it, or to demonstrate various fonts of a typeface without meaningful text that could be distracting. Lorem ipsum is typically a corrupted version of De finibus bonorum et malorum, a 1st-century BC text by the Roman statesman and philosopher.
-                    </p>
+                    <div id="intro" class="intro-container">
+                        <img id="itsuki" src="/assets/itsuki.jpg"/>
+                        <div id="info">
+                            <span id="username">Smooth-E</span>
+                            <span id="subheader">Software and game developer who loves unpopular technology</span>
+                            <span id="description">
+                                Hello! This website is about my software projects. Currently I mostly develop ergonomic 
+                                applications for various mobile platforms, but I also enjoy tinkering with interesting 
+                                setups and preserving software-related stuff.
+                            </span>
+                        </div>
+                    </div>
+                    <div class="intro-underline"></div>
+                    <div id="body">
+                        <h2>About me</h2>
+                        <p>
+                            You can contact me for collaboration, job offers or just to ask a question.
+                        </p>
+                        <div id="contacts">
+                            <a class="with-icon" href="mailto:smoothie@disroot.org">
+                                <img src="/assets/icons/letter-48.png"/>
+                                E-Mail
+                            </a>
+                            <a class="with-icon" href="https://github.com/Smooth-E">
+                                <img src="/assets/icons/cab-48.png"/>
+                                GitHub
+                            </a>
+                        </div>
+                        <p>
+                            I usually prefer working with a native toolkit each platform provides,
+                            when developing an app. I have experience with Android Views and Jetpack Compose,
+                            Qt/QML app development for Linux, some Windows forms and J2ME experience as well.
+                        </p>
+                        <p>
+                            I also develop games when I feel like it. Unity is currently my main focus in this area,
+                            but I also have experience with LibGDX and Godot.
+                        </p>
+                        <p>
+                            If you found my work useful or just cool,
+                            you can donate on <a href="https://boosty.to/smooth-e/donate">Boosty</a>.
+                        </p>
+                    </div>
                 </div>
+            </div>
+            <div id="shortcut-grid">
+                <a class="shortcut" href="">
+                    <img src="/assets/icons/phone-green-48.png"/>
+                    <span>Mobile Apps</span>
+                </>
+                <a class="shortcut" href="">
+                    <img src="/assets/icons/controller-48.png"/>
+                    <span>Games</span>
+                </a>
+                <a class="shortcut" href="">
+                    <img src="/assets/icons/phone-blue-48.png"/>
+                    <span>Auorora OS</span>
+                </a>
+                <a class="shortcut" href="">
+                    <img src="/assets/icons/articles-folder-48.png"/>
+                    <span>Other Articles</span>
+                </a>
             </div>
         </div>
     </body>

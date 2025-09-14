@@ -1,25 +1,93 @@
 ---
 ---
 
-#window-about {    
-    .pane {
-        display: flex;
-        background: var(--color-pane);
-        padding: 20px;
-    }
-
-    #avatar {
-        width: 100px;
-        height: 100px;
-    }
-
-    #username {
-        margin-left: 20px;
-        font-size: 2em;
-        font-weight: bolder;
-    }
+#window-about {   
+    width: 100%;
 
     #intro {
-        margin-left: 20px;
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+
+        #itsuki {
+            height: 7.5em;
+            margin-right: 15px;
+        }
+
+        #info {
+            display: flex;
+            flex-direction: column;
+
+            #username {
+                color: white;
+                font-size: 1.7em;
+                font-weight: bold;
+                text-shadow: 2px 2px black;
+            }
+
+            #subheader {
+                color: white;
+                text-shadow: 1px 1px black;
+                font-size: 1.1em;
+                margin-top: 3px;
+            }
+
+            #description {
+                color: white;
+                text-shadow: 1px 1px black;
+                font-size: 1em;
+                margin-top: 10px;
+            }
+        }
+    }
+
+    #body {
+        margin-top: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    #contacts {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+    }
+}
+
+#shortcut-grid {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    margin-right: 20px;
+    margin-left: 20px;
+    justify-content: space-between;
+
+    .shortcut {
+        display: flex;
+        flex-direction: column;
+        width: 58px;
+        padding: 5px;
+        background-color: transparent;
+        border: none;
+        text-decoration: none;
+
+        img {
+            width: 48px;
+            height: 48px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        span {
+            width: 100%;
+            margin-top: 7px;
+            word-wrap: break-word;
+            color: white;
+            text-shadow: 1px 1px black;
+            text-align: center;
+        }
     }
 }
