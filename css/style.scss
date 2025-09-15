@@ -29,6 +29,8 @@
     --control-light-beige: #C9C7BA;
     --control-white:       #EBEBEE;
     --control-orange:      #E68B2C;
+    --control-dirty-blue:  #7F9DB9;
+    --control-white-blue:  #D2ECFF;
 
     --button-border-normal: rgb(127, 157, 185);
 
@@ -45,8 +47,9 @@ body {
 }
 
 h1, h2, h3, p {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 0;
 }
 
 .taskbar {
@@ -265,6 +268,8 @@ a.button {
     border: 1px solid var(--button-border-normal);
     background: linear-gradient(to bottom, var(--control-white), var(--control-light-beige));
     gap: 7px;
+    flex-wrap: nowrap;
+    text-wrap: nowrap;
 
     img {
         width: 1em;

@@ -32,8 +32,8 @@ github_username:  jekyll
 
 # Build settings
 # theme: minima
-plugins:
-  - jekyll-feed
+# plugins:
+#   - jekyll-feed
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -44,6 +44,14 @@ plugins:
 
 markdown: kramdown
 highlighter: rouge
+
+collections:
+  mobile:
+    output: true
+  games:
+    output: true
+  aurora:
+    output: true
 
 exclude:
   - .sass-cache/
