@@ -254,7 +254,8 @@ h1, h2, h3, p {
         linear-gradient(var(--base-beige), var(--base-beige)),
     ;
     color: var(--control-dark-grey);
-    text-shadow: 0 0 2px var(--control-dark-beige);
+    color: transparent;
+    text-shadow: 0 0 1px var(--control-middle-grey);
 }
 
 a.button {
