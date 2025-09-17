@@ -1,0 +1,102 @@
+---
+---
+
+<!-- This template aggregates project pages and article pages on a certain topic. -->
+
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="icon" href="{{ app_icon }}"/>
+        <title>{{ page.title }}</title>
+
+        <meta name="HandheldFriendly" content="true" />
+        <meta name="MobileOptimized" content="320" />
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=no" />
+
+        <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="/css/aggregator.css"/>
+
+        <style>
+            :root {
+                --icon-url: url("{{ page.category_icon }}");
+                --secondary-icon: url("{{ page.secondary_icon }}");
+                --secondary-icon-width: {{ page.secondary_icon_width }}px;
+                --secondary-icon-height: {{ page.secondary_icon_height }}px;
+                --intro-color-light: {{ page.color_light }};
+                --intro-color-dark: {{ page.color_dark }};
+            }
+        </style>
+    </head>
+    <body>
+        <div class="taskbar">
+            <div class="controls">
+                <button class="start-button">
+                    <img class="icon" src="/assets/icons/around-planet.png"/>
+                    <span class="title">Explore</span>
+                </button>
+                <a class="program selected">
+                    <img class="icon" src="{{ page.category_icon }}"/>
+                    {{ page.category_name }}
+                </a>
+            </div>
+        </div>
+        <div class="center-column">
+            <div class="window" id="main-window">
+                <div class="header">
+                    <img class="icon" src="{{ page.category_icon }}"/>
+                    <span class="title">{{ page.category_name }}</span>
+                </div>
+                <div class="content">
+                    <div id="intro">
+                        <img id="icon" src="{{ page.category_icon }}"/>
+                        <div id="words">
+                            <div id="header">{{ page.category_name }}</div>
+                            <div id="description">{{ page.category_description }}</div>
+                        </div>
+                    </div>
+                    <div class="intro-underline"></div>    
+                    <div id="projects" class="category">
+                        <div class="category-intro">
+                            <span class="title">Projects</span>
+                            <span class="description">{{ page.projects_description }}</span>
+                            <div class="line"></div>
+                        </div>
+                        {% for project in site[page.projects_collection] %}
+                            <a class="listing project" href="{{ project.url }}" style="--project-color-light: {{ project.color_light }}; --project-color-dark: {{ project.color_dark }};">
+                                {% assign project_icon = "/assets/" | append: page.projects_collection | append: "/" | append: project.slug | append: "/icon.png" %}
+                                <img class="icon" src="{{ project_icon }}"/>
+                                <div class="words">
+                                    <div class="name">{{ project.title }}</div>
+                                    <span class="description">{{ project.description }}</span>
+                                    <!-- TODO: Add download button if specified -->
+                                </div>
+                                <img class="secondary-icon" src="/assets/icons/go-48.png"/>
+                            </a>
+                        {% endfor %}
+                    </div>
+                    <div id="articles" class="category">
+                        <div class="category-intro">
+                            <span class="title">Articles</span>
+                            <span class="description">{{ page.articles_description }}</span>
+                            <div class="line"></div>
+                        </>
+                        {% for tag in site.tags %}
+                            {% if tag[0] == page.articles_tag %}
+                                {% for article in tag[1] %}
+                                    <a class="listing article" href="{{ article.url }}">
+                                        <img class="icon" src="/assets/icons/notebook-48.png"/>
+                                        <div class="words">
+                                            <span class="name">{{ article.title }}</span>
+                                            <span class="description">{{ article.excerpt | strip_html }}</span>
+                                        </div>
+                                        <img class="secondary-icon" src="/assets/icons/arrow-open-16.png"/>
+                                    </a>
+                                {% endfor %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

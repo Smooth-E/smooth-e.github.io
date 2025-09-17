@@ -21,8 +21,8 @@ screenshots:
   - personal-mirrors.png
   - personal-organizations.png
   - repository.png
-color_light: "82E4FF"
-color_dark: "003155"
+color_light: "#82E4FF"
+color_dark: "#003155"
 source_code: https://github.com/Smooth-E/notabug-mobile
 ---
 

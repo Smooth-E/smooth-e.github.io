@@ -2,8 +2,8 @@
 layout: aurora-app
 title: Бортовой журнал
 description: Небольшое приложение-дневник для ОС Аврора 
-color_light: "FF7500"
-color_dark: "CF3535"
+color_light: "#FF7500"
+color_dark: "#CF3535"
 source_code: https://github.com/Smooth-E/aurora-captains-log
 screenshots:
   - list.png
@@ -50,4 +50,4 @@ under_construction: true
 
 Вы можете поддержать разработчика порта для ОС Аврора, [пожертвовав через Boosty](https://boosty.to/smooth-e/donate).
 
-Конечно же, мы будем очень рады, если вы поможете проекту, предложив свои правки или улучшения ✨
+Конечно же, мы будем очень рады, если вы поможете проекту, предложив свои правки или улучшения!
