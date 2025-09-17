@@ -13,6 +13,7 @@ screenshots:
   - one-ui-integration.png
 color_light: D8E7CB
 color_dark: 72A14A
+source_code: https://github.com/Smooth-E/wireless-adb-switch/
 download: https://github.com/Smooth-E/wireless-adb-switch/releases/latest/
 ---
 

@@ -54,12 +54,20 @@
                         <div id="data">
                             <span id="name">{{ page.title }}</span>
                             <span id="description">{{ page.description }}</span>
-                            {% if page.download %}
-                                <a class="hero-button download" href="{{ page.download }}">
-                                    <img src="/assets/icons/package-48.png"/>
-                                    <span>Download</span>
-                                </a>
-                            {% endif %}
+                            <div id="buttons">
+                                {% if page.source_code %}
+                                    <a class="hero-button source-code" href="{{ page.source_code }}" target="_blank" rel="noreferrer noopener">
+                                        <img src="/assets/icons/cab-48.png"/>
+                                        <span>View source code</span>
+                                    </a>
+                                {% endif %}
+                                {% if page.download %}
+                                    <a class="hero-button download" href="{{ page.download }}" target="_blank" rel="noreferrer noopener">
+                                        <img src="/assets/icons/package-48.png"/>
+                                        <span>Download</span>
+                                    </a>
+                                {% endif %}
+                            </div>
                         </div>
                     </div>
                     <div class="intro-underline"></div>
