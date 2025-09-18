@@ -10,13 +10,9 @@
         <link rel="icon" href="{{ app_icon }}"/>
         <title>{{ page.title }}</title>
 
-        <meta name="HandheldFriendly" content="true" />
-        <meta name="MobileOptimized" content="320" />
-        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=no" />
+        {% include head.html %}
 
-        <link rel="stylesheet" type="text/css" href="/css/style.css"/>
         <link rel="stylesheet" type="text/css" href="/css/app.css"/>
-
         <style>
             :root {
                 --app-color-light: {{ page.color_light }};
@@ -97,16 +93,7 @@
                         <h1>Description</h1>
                         {{ page.content }}
                     </div>
-                    <div id="footer" class="pane">
-                        <div id="left">
-                            <span id="thing">This is a footer. Don't you too think it's kinda unnecessary?</span>
-                            <span id="copyright">© 2025 Smooth-E</span>
-                        </div>
-                        <a id="go-up" class="button" href="javascript:window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })">
-                            <img src="/assets/icons/arrow-up-48.png"/>
-                            <span>Scroll up!</span>
-                        </a>
-                    </div>
+                    {% include footer.html %}
                 </div>
             </div>
         </div>

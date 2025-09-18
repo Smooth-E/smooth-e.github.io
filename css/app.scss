@@ -215,24 +215,3 @@
 #content {
     padding: 0 10px;
 }
-
-#footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 10px;
-
-    #left {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-    }
-
-    #thing {
-        font-style: italic;
-    }
-
-    #go-up {
-        margin-top: auto;
-    }
-}

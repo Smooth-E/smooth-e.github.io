@@ -6,16 +6,12 @@
 <html>
     <head>
         <meta charset="utf-8"/>
-        <link rel="icon" href="{{ app_icon }}"/>
-        <title>{{ page.title }}</title>
+        <link rel="icon" href="{{ page.category_icon }}"/>
+        <title>{{ page.category_name }} by Smooth-E</title>
 
-        <meta name="HandheldFriendly" content="true" />
-        <meta name="MobileOptimized" content="320" />
-        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=no" />
+        {% include head.html %}
 
-        <link rel="stylesheet" type="text/css" href="/css/style.css"/>
         <link rel="stylesheet" type="text/css" href="/css/aggregator.css"/>
-
         <style>
             :root {
                 --icon-url: url("{{ page.category_icon }}");
@@ -96,6 +92,7 @@
                         {% endfor %}
                     </div>
                 </div>
+                {% include footer.html %}
             </div>
         </div>
     </body>
