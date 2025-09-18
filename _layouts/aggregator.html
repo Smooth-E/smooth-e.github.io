@@ -58,13 +58,12 @@
                             <div class="line"></div>
                         </div>
                         {% for project in site[page.projects_collection] %}
-                            <a class="listing project" href="{{ project.url }}" style="--project-color-light: {{ project.color_light }}; --project-color-dark: {{ project.color_dark }};">
+                            <a class="listing project" href="{{ project.url }}" style="--tint: {{ project.color_light }};">
                                 {% assign project_icon = "/assets/" | append: page.projects_collection | append: "/" | append: project.slug | append: "/icon.png" %}
                                 <img class="icon" src="{{ project_icon }}"/>
                                 <div class="words">
                                     <div class="name">{{ project.title }}</div>
                                     <span class="description">{{ project.description }}</span>
-                                    <!-- TODO: Add download button if specified -->
                                 </div>
                                 <img class="secondary-icon" src="/assets/icons/go-48.png"/>
                             </a>
@@ -79,7 +78,7 @@
                         {% for tag in site.tags %}
                             {% if tag[0] == page.articles_tag %}
                                 {% for article in tag[1] %}
-                                    <a class="listing article" href="{{ article.url }}">
+                                    <a class="listing article" href="{{ article.url }}" style="--tint: #c7c7c7;">
                                         <img class="icon" src="/assets/icons/notebook-48.png"/>
                                         <div class="words">
                                             <span class="name">{{ article.title }}</span>
